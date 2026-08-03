@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-50: #eef2f7;
+  --color-sky-100: #d4dee8;
+  --color-sky-200: #bcc9d8;
+  --color-sky-300: #8aa8c5;
+  --color-sky-400: #3d6a8f;
+  --color-sky-500: #1a3d5c;
+  --color-sky-600: #0F2B4A;
+  --color-sky-700: #0a1d32;
+
+  /* Navy dark-theme scale — additive only, scoped to the public marketing site
+     (app/** excluding app/account/**, and components/**). Does NOT redefine the
+     sky-* tokens above, which the Account Dashboard still relies on. */
+  --color-navy-950: #060f1c;
+  --color-navy-900: #0a1d32;
+  --color-navy-850: #0d2440;
+  --color-navy-800: #0F2B4A;
+  --color-navy-700: #163c5c;
+  --color-navy-600: #1a3d5c;
+  --color-navy-500: #2f6690;
+  --color-navy-400: #5b8fb8;
+  --color-navy-300: #9dc0dd;
+  --color-navy-200: #cfe0ee;
+  --color-navy-100: #eaf1f8;
+}
+
+/* Public-site-scoped dark theme base. Applied via the .site-dark wrapper in
+   LayoutWrapper (never on app/account/** or aimsadmin/**), so body's shared
+   text color used by the Account Dashboard is left untouched. */
+.site-dark {
+  background-color: var(--color-navy-900);
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0f172a;
+}
+
+/* Hide horizontal scrollbar (blog, publications, carousels) */
+.scrollbar-none, .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
