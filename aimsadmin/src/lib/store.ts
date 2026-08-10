@@ -1,10 +1,14 @@
-import type { BlogPost, BlogCategory, Appointment, Message, Member, ServiceRequest, AdminUser } from "./types";
+import type { BlogPost, BlogCategory, Appointment, Message, Member, ServiceRequest, AdminUser, EventItem } from "./types";
 
 // Re-export types for convenience
-export type { Member, BlogPost, BlogCategory, Appointment, Message, ServiceRequest, AdminUser };
+export type { Member, BlogPost, BlogCategory, Appointment, Message, ServiceRequest, AdminUser, EventItem };
 
 const API = "https://client2.wecollections.us/api";
-const API_BASE = "https://client2.wecollections.us";
+// Derived from API so it can never drift out of sync when API is pointed at a
+// different environment (e.g. localhost during development) — a hardcoded
+// second constant here previously caused uploaded file URLs to resolve
+// against the wrong host.
+const API_BASE = API.replace(/\/api\/?$/, "");
 
 // ─── Blog posts via API ─────────────────────────────────────
 
@@ -43,34 +47,79 @@ export async function deletePost(id: string): Promise<void> {
   }
 }
 
-export async function uploadFile(file: File): Promise<string> {
-  const formData = new FormData();
-  formData.append("file", file);
-  const res = await fetch(`${API}/upload/file`, {
-    method: "POST",
-    body: formData,
+// Uses XHR (not fetch) so we can report real upload progress via
+// `upload.onprogress` — fetch has no simple cross-browser way to do this.
+function uploadWithProgress(url: string, fieldName: string, file: File, onProgress?: (pct: number) => void): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData();
+    formData.append(fieldName, file);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    xhr.upload.onprogress = (e) => {
+      if (e.lengthComputable && onProgress) onProgress(Math.round((e.loaded / e.total) * 100));
+    };
+    xhr.onload = () => {
+      let data: any = {};
+      try { data = JSON.parse(xhr.responseText); } catch {}
+      if (xhr.status >= 200 && xhr.status < 300 && data.url) {
+        resolve(`${API_BASE}${data.url}`);
+      } else {
+        reject(new Error(data.error || `Upload failed (${xhr.status})`));
+      }
+    };
+    xhr.onerror = () => reject(new Error("Cannot reach the server. Please check your connection."));
+    xhr.send(formData);
   });
-  if (!res.ok) {
-    const error = await res.json().catch(() => ({ error: "Upload failed" }));
-    throw new Error(error.error || `Failed to upload file: ${res.status}`);
-  }
-  const data = await res.json();
-  return `${API_BASE}${data.url}`;
 }
 
-export async function uploadCoverImage(file: File): Promise<string> {
-  const formData = new FormData();
-  formData.append("image", file);
-  const res = await fetch(`${API}/upload/cover`, {
-    method: "POST",
-    body: formData,
+export async function uploadFile(file: File, onProgress?: (pct: number) => void): Promise<string> {
+  return uploadWithProgress(`${API}/upload/file`, "file", file, onProgress);
+}
+
+export async function uploadCoverImage(file: File, onProgress?: (pct: number) => void): Promise<string> {
+  return uploadWithProgress(`${API}/upload/cover`, "image", file, onProgress);
+}
+
+// ─── Events (audio/video) via API ───────────────────────────
+
+export async function getEvents(): Promise<EventItem[]> {
+  const res = await fetch(`${API}/events`);
+  if (!res.ok) throw new Error(`Failed to fetch events: ${res.status}`);
+  const events = await res.json();
+  return events.map((e: EventItem) => ({
+    ...e,
+    coverImage: e.coverImage ? (e.coverImage.startsWith("http") ? e.coverImage : `${API_BASE}${e.coverImage}`) : null,
+    mediaUrl: e.mediaUrl ? (e.mediaUrl.startsWith("http") ? e.mediaUrl : `${API_BASE}${e.mediaUrl}`) : null,
+  }));
+}
+
+export async function saveEvent(event: EventItem): Promise<EventItem> {
+  const res = await fetch(`${API}/events`, {
+    method: event.id ? "PATCH" : "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(event),
   });
   if (!res.ok) {
-    const error = await res.json().catch(() => ({ error: "Upload failed" }));
-    throw new Error(error.error || `Failed to upload image: ${res.status}`);
+    const error = await res.json().catch(() => ({ error: "Unknown error" }));
+    throw new Error(error.error || `Failed to save event: ${res.status}`);
   }
-  const data = await res.json();
-  return `${API_BASE}${data.url}`;
+  return res.json();
+}
+
+export async function deleteEvent(id: string): Promise<void> {
+  const res = await fetch(`${API}/events`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+  });
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({ error: "Unknown error" }));
+    throw new Error(error.error || `Failed to delete event: ${res.status}`);
+  }
+}
+
+export async function uploadMedia(file: File, onProgress?: (pct: number) => void): Promise<string> {
+  return uploadWithProgress(`${API}/upload/media`, "media", file, onProgress);
 }
 
 // ─── Categories (localStorage — admin-managed) ─────────────

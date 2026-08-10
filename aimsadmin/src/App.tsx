@@ -7,6 +7,7 @@ import Members from "./pages/Members";
 import AdminMessages from "./pages/AdminMessages";
 import AdminAppointments from "./pages/AdminAppointments";
 import Blogs from "./pages/Blogs";
+import Events from "./pages/Events";
 import Categories from "./pages/Categories";
 import AdminServiceRequests from "./pages/AdminServiceRequests";
 import AdminUsers from "./pages/AdminUsers";
@@ -17,10 +18,10 @@ import AdminLayout from "./components/AdminLayout";
 
 function allowedRoutes(role: string) {
   const r = role?.toLowerCase();
-  if (r === "editor") return new Set(["/", "/blogs", "/categories", "/settings"]);
+  if (r === "editor") return new Set(["/", "/blogs", "/events", "/categories", "/settings"]);
   if (r === "customercare" || r === "customer_care")
-    return new Set(["/", "/members", "/messages", "/appointments", "/service-requests", "/blogs", "/categories", "/consultations", "/contact-messages", "/settings"]);
-  return new Set(["/", "/members", "/messages", "/appointments", "/service-requests", "/blogs", "/categories", "/admins", "/consultations", "/contact-messages", "/settings"]);
+    return new Set(["/", "/members", "/messages", "/appointments", "/service-requests", "/blogs", "/events", "/categories", "/consultations", "/contact-messages", "/settings"]);
+  return new Set(["/", "/members", "/messages", "/appointments", "/service-requests", "/blogs", "/events", "/categories", "/admins", "/consultations", "/contact-messages", "/settings"]);
 }
 
 function AppContent() {
@@ -62,6 +63,7 @@ function AppContent() {
       case "/appointments":    return <AdminAppointments key={refreshKey} onUpdate={refresh} onNavigate={navigate} />;
       case "/service-requests": return <AdminServiceRequests key={refreshKey} onUpdate={refresh} onNavigate={navigate} />;
       case "/blogs":           return <Blogs key={refreshKey} onUpdate={refresh} />;
+      case "/events":          return <Events key={refreshKey} onUpdate={refresh} />;
       case "/categories":      return <Categories key={refreshKey} onUpdate={refresh} />;
       case "/admins":          return <AdminUsers key={refreshKey} onUpdate={refresh} />;
       case "/contact-messages": return <AdminContactMessages key={refreshKey} onUpdate={refresh} />;

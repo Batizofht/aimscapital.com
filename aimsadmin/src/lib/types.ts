@@ -19,6 +19,19 @@ export interface BlogCategory {
   name: string;
 }
 
+export interface EventItem {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  type: "audio" | "video";
+  mediaUrl: string | null;
+  coverImage: string | null;
+  published: boolean;
+}
+
 export interface Category {
   id: string;
   name: string;

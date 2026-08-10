@@ -12,7 +12,7 @@ const heroPractices = [
   { key: "landTitle", descKey: "landDesc" },
 ];
 
-const videos = ["/videos/fir.mp4", "/videos/sec.mp4", "/videos/thi.mp4"];
+const videos = ["/videos/sec.MOV", "/videos/thi.MOV","/videos/fir.mp4",];
 
 export default function VideoHero() {
   const { t } = useTranslation();
@@ -121,26 +121,26 @@ export default function VideoHero() {
           alt="AIMS Capital"
           className="w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[34rem] h-auto max-w-[88vw] mb-5"
         />
-        <p className="text-white/70 text-xs sm:text-sm italic tracking-wide mb-7 max-w-sm sm:max-w-md mx-auto">
+        {/* <p className="text-white/70 text-xs sm:text-sm italic tracking-wide mb-7 max-w-sm sm:max-w-md mx-auto">
           {t("hero.eyebrow")}
-        </p>
+        </p> */}
         <Link
-          href="/contact"
+          href="/about"
           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-navy-900 bg-white rounded-lg hover:bg-navy-100 transition-all shadow-lg"
         >
-          {t("nav.contactUs")}
+          {t("nav.aboutUs")}
         </Link>
       </div>
 
-      {/* Practice Areas — right-aligned carousel */}
+      {/* Practice Areas — right-aligned carousel — commented out, was overlapping/hiding the logo
       <div className="absolute bottom-44 right-6 hidden lg:block w-[340px] xl:w-[400px]">
         <div className="flex flex-col gap-3">
           {heroPractices.slice(heroPracticeIdx, heroPracticeIdx + 2).map((p) => (
             <div key={p.key} className="bg-navy-800/80 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-navy-700/80 hover:border-navy-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy-900/50 transition-all duration-200 cursor-default">
-              <div className="text-xs text-navy-300 font-bold uppercase tracking-wider mb-1 group-hover:text-navy-200">
+              <div className="text-xs text-white font-bold uppercase tracking-wider mb-1">
                 {t(`home.practice.${p.key}`)}
               </div>
-              <p className="text-navy-100 text-xs leading-relaxed line-clamp-2">
+              <p className="text-white/90 text-xs leading-relaxed line-clamp-2">
                 {t(`home.practice.${p.descKey}`)}
               </p>
             </div>
@@ -165,6 +165,7 @@ export default function VideoHero() {
           </button>
         </div>
       </div>
+      */}
 
       <div className="absolute bottom-10 md:bottom-10 sm:bottom-8 left-4 sm:left-8 flex items-center gap-3 sm:gap-4">
         <button

@@ -12,7 +12,7 @@ export default function PracticeAreaModal({ title, details }: { title: string; d
     <>
       <button
         onClick={() => setShow(true)}
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-200 hover:text-white transition-colors mt-3"
+        className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors mt-3"
       >
         {t("practiceAreas.readMore")} <ArrowRight className="w-3 h-3" />
       </button>
@@ -25,13 +25,13 @@ export default function PracticeAreaModal({ title, details }: { title: string; d
               <h3 className="text-lg font-bold text-white uppercase tracking-wider">{title}</h3>
               <button
                 onClick={() => setShow(false)}
-                className="w-8 h-8 rounded-full bg-navy-700 hover:bg-navy-600 flex items-center justify-center text-navy-300 hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full bg-navy-700 hover:bg-navy-600 flex items-center justify-center text-white/70 hover:text-white transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
             <div className="px-6 md:px-8 py-6 max-h-[70vh] overflow-y-auto scrollbar-thin">
-              <div className="space-y-4 text-navy-100 leading-relaxed text-sm sm:text-base">
+              <div className="space-y-4 text-white/90 leading-relaxed text-sm sm:text-base">
                 <p>{details}</p>
               </div>
             </div>

@@ -49,3 +49,14 @@ body {
 .scrollbar-none::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Plyr media player — tinted to the site's navy/sky palette instead of its default blue */
+.plyr {
+  --plyr-color-main: var(--color-sky-400);
+  --plyr-video-background: #000000;
+  --plyr-audio-controls-background: var(--color-navy-800);
+  --plyr-audio-control-color: #ffffff;
+  --plyr-menu-background: var(--color-navy-800);
+  --plyr-menu-color: #ffffff;
+  border-radius: 0.5rem;
+}

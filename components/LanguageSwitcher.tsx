@@ -79,8 +79,8 @@ export default function LanguageSwitcher({ variant = "header" }: { variant?: "he
               onClick={() => change(l.code)}
               className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
                 current.startsWith(l.code)
-                  ? "bg-navy-700 text-navy-100 font-semibold"
-                  : "text-navy-200 hover:bg-white/10"
+                  ? "bg-navy-700 text-white/90 font-semibold"
+                  : "text-white/80 hover:bg-white/10"
               }`}
             >
               {l.full}

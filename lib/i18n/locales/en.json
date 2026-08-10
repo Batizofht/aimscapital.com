@@ -5,7 +5,9 @@
     "services": "Services",
     "practiceAreas": "Practice Areas",
     "projects": "Projects",
+    "team": "Team",
     "publications": "Publications",
+    "events": "Events",
     "blog": "Blog",
     "contact": "Contact",
     "contactUs": "Contact Us",
@@ -111,7 +113,8 @@
     "clients": {
       "eyebrow": "Clients & Partners",
       "title": "Clients & Partners",
-      "recognition": "Recognition & Accreditation"
+      "recognition": "Recognition & Accreditation",
+      "viewMore": "View More"
     },
     "cta": {
       "eyebrow": "Get Started",
@@ -531,6 +534,12 @@
     "previous": "Previous",
     "next": "Next",
     "allCategories": "All"
+  },
+  "events": {
+    "eyebrow": "Media",
+    "title": "Events",
+    "subhead": "Audio and video coverage of AIMS Capital events, interviews and briefings.",
+    "none": "No events published yet."
   },
   "search": {
     "eyebrow": "Search",

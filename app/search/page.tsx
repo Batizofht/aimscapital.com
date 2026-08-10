@@ -116,14 +116,13 @@ export default function SearchPage() {
 
   return (
     <div className="pt-20">
-      <section className="bg-navy-900 py-16 lg:py-20">
+      <section className="bg-navy-850 py-16 lg:py-20">
         <div className="max-w-[800px] mx-auto px-4 md:px-6">
           <div className="text-center mb-8">
-            <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("search.eyebrow")}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wider mb-4">{t("search.title")}</h1>
           </div>
           <form onSubmit={handleSubmit} className="relative max-w-xl mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-navy-300" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/70" />
             <input
               type="text"
               value={query}
@@ -143,7 +142,7 @@ export default function SearchPage() {
               className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
                 activeTab === "articles"
                   ? "bg-navy-600 text-white shadow-sm"
-                  : "text-navy-300 hover:text-white"
+                  : "text-white/70 hover:text-white"
               }`}
             >
               <FileText className="w-4 h-4" />{t("search.tabArticles")}
@@ -153,7 +152,7 @@ export default function SearchPage() {
               className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
                 activeTab === "documents"
                   ? "bg-navy-600 text-white shadow-sm"
-                  : "text-navy-300 hover:text-white"
+                  : "text-white/70 hover:text-white"
               }`}
             >
               <File className="w-4 h-4" />{t("search.tabDocuments")}
@@ -172,14 +171,14 @@ export default function SearchPage() {
             </div>
           ) : !searched ? (
             <div className="text-center py-16">
-              <Search className="w-12 h-12 text-navy-500 mx-auto mb-4" />
-              <p className="text-navy-400 text-sm">{t("search.prompt")}</p>
+              <Search className="w-12 h-12 text-white/50 mx-auto mb-4" />
+              <p className="text-white/60 text-sm">{t("search.prompt")}</p>
             </div>
           ) : results.length === 0 ? (
             <div className="text-center py-16">
-              <FileText className="w-12 h-12 text-navy-500 mx-auto mb-4" />
-              <p className="text-navy-300 font-medium mb-1">{t("search.noResults")}</p>
-              <p className="text-navy-400 text-sm">{t("search.tryDifferent")}</p>
+              <FileText className="w-12 h-12 text-white/50 mx-auto mb-4" />
+              <p className="text-white/70 font-medium mb-1">{t("search.noResults")}</p>
+              <p className="text-white/60 text-sm">{t("search.tryDifferent")}</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -192,7 +191,7 @@ export default function SearchPage() {
                       {item.type === "document" ? (
                         <File className="w-5 h-5 text-amber-600" />
                       ) : (
-                        <FileText className="w-5 h-5 text-navy-200" />
+                        <FileText className="w-5 h-5 text-white/80" />
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
@@ -200,24 +199,24 @@ export default function SearchPage() {
                         <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
                           item.type === "document"
                             ? "text-amber-600 bg-amber-50"
-                            : "text-navy-200 bg-navy-700"
+                            : "text-white/80 bg-navy-700"
                         }`}>
                           {item.type === "document" ? t("search.pdf") : t("search.article")}
                         </span>
-                        <span className="text-[10px] text-navy-400">{item.category}</span>
+                        <span className="text-[10px] text-white/60">{item.category}</span>
                       </div>
-                      <h3 className="text-sm font-bold text-white mb-1 group-hover:text-navy-200 transition-colors">{item.title}</h3>
-                      <p className="text-xs text-navy-100 leading-relaxed line-clamp-2" dangerouslySetInnerHTML={{ __html: item.excerpt }} />
-                      <div className="flex items-center gap-3 mt-2 text-[10px] text-navy-400">
+                      <h3 className="text-sm font-bold text-white mb-1 group-hover:text-white/80 transition-colors">{item.title}</h3>
+                      <p className="text-xs text-white/90 leading-relaxed line-clamp-2" dangerouslySetInnerHTML={{ __html: item.excerpt }} />
+                      <div className="flex items-center gap-3 mt-2 text-[10px] text-white/60">
                         <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{item.date}</span>
                         <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{item.readTime}</span>
                         {external && (
-                          <span className="flex items-center gap-1 text-navy-200 font-medium">
+                          <span className="flex items-center gap-1 text-white/80 font-medium">
                             <ExternalLink className="w-3 h-3" />{t("search.openPdf")}
                           </span>
                         )}
                         {item.type === "document" && !item.fileUrl && (
-                          <span className="text-[10px] text-navy-400 italic">{t("search.noPdf")}</span>
+                          <span className="text-[10px] text-white/60 italic">{t("search.noPdf")}</span>
                         )}
                       </div>
                     </div>

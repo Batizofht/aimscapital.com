@@ -5,7 +5,9 @@
     "services": "Services",
     "practiceAreas": "Domaines d'expertise",
     "projects": "Projets",
+    "team": "Équipe",
     "publications": "Publications",
+    "events": "Événements",
     "blog": "Blog",
     "contact": "Contact",
     "contactUs": "Nous contacter",
@@ -111,7 +113,8 @@
     "clients": {
       "eyebrow": "Clients et partenaires",
       "title": "Clients et partenaires",
-      "recognition": "Reconnaissance et accréditations"
+      "recognition": "Reconnaissance et accréditations",
+      "viewMore": "Voir plus"
     },
     "cta": {
       "eyebrow": "Commencer",
@@ -531,6 +534,12 @@
     "previous": "Précédent",
     "next": "Suivant",
     "allCategories": "Tout"
+  },
+  "events": {
+    "eyebrow": "Médias",
+    "title": "Événements",
+    "subhead": "Couverture audio et vidéo des événements, interviews et briefings d'AIMS Capital.",
+    "none": "Aucun événement publié pour le moment."
   },
   "search": {
     "eyebrow": "Recherche",

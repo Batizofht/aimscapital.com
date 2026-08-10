@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../AuthContext";
-import { LayoutDashboard, Users, MessageSquare, Calendar, FileText, FolderOpen, Shield, Mail, PhoneCall, Settings, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, Users, MessageSquare, Calendar, FileText, FolderOpen, Shield, Mail, PhoneCall, Settings, LogOut, Menu, X, Film } from "lucide-react";
 
 const allNavItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
@@ -9,6 +9,7 @@ const allNavItems = [
   { href: "/appointments", label: "Appointments", icon: Calendar },
   { href: "/service-requests", label: "Service Requests", icon: FileText },
   { href: "/blogs", label: "Publications", icon: FileText },
+  { href: "/events", label: "Events", icon: Film },
   { href: "/categories", label: "Categories", icon: FolderOpen },
   { href: "/admins", label: "Admins", icon: Shield },
   { href: "/consultations", label: "Consultations", icon: PhoneCall },
@@ -19,7 +20,7 @@ const allNavItems = [
 function getNavItems(role: string) {
   const r = role?.toLowerCase();
   if (r === "editor") {
-    return allNavItems.filter((i) => i.href === "/" || i.href === "/blogs" || i.href === "/categories");
+    return allNavItems.filter((i) => i.href === "/" || i.href === "/blogs" || i.href === "/events" || i.href === "/categories");
   }
   if (r === "customercare" || r === "customer_care") {
     return allNavItems.filter((i) => i.href !== "/admins");

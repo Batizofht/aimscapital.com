@@ -3,8 +3,8 @@ import PracticeAreasClient from "./PracticeAreasClient";
 
 export const metadata: Metadata = {
   title: "Practice Areas | AIMS Capital",
-  description: "12 specialised practice areas at AIMS Capital: arbitration, aviation, finance, infrastructure, contract management, health, insolvency, land, legal representation, consultancy, tax, and technology.",
-  keywords: ["legal practice areas Rwanda", "arbitration Rwanda", "corporate law services", "investment advisory", "PPP law", "AIMS Capital services"],
+  description: "12 specialised practice areas and full-spectrum legal and investment advisory services at AIMS Capital: arbitration, aviation, finance, infrastructure, contract management, health, insolvency, land, legal representation, consultancy, tax, and technology — licensed by Rwanda Capital Markets Authority since 2011.",
+  keywords: ["legal practice areas Rwanda", "arbitration Rwanda", "corporate law services", "investment advisory", "PPP law", "AIMS Capital services", "legal services Rwanda"],
   alternates: { canonical: "/practice-areas/" },
   openGraph: {
     type: "website",

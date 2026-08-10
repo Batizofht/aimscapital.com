@@ -117,7 +117,7 @@ export default function SearchDropdown() {
         <div className="absolute top-full right-0 mt-2 w-80 bg-navy-800 rounded-xl shadow-2xl border border-white/10 overflow-hidden z-50">
           {loading ? (
             <div className="flex items-center justify-center py-8">
-              <Loader className="w-5 h-5 text-navy-200 animate-spin" />
+              <Loader className="w-5 h-5 text-white/80 animate-spin" />
             </div>
           ) : suggestions.length > 0 ? (
             <div>
@@ -131,15 +131,15 @@ export default function SearchDropdown() {
                       {item.type === "document" ? (
                         <File className="w-4 h-4 text-amber-400" />
                       ) : (
-                        <FileText className="w-4 h-4 text-navy-200" />
+                        <FileText className="w-4 h-4 text-white/80" />
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium text-white truncate">{item.title}</p>
-                      <p className="text-xs text-navy-300 truncate" dangerouslySetInnerHTML={{ __html: item.excerpt || (item.type === "document" ? t("search.pdfDocument") : t("search.article")) }} />
+                      <p className="text-xs text-white/70 truncate" dangerouslySetInnerHTML={{ __html: item.excerpt || (item.type === "document" ? t("search.pdfDocument") : t("search.article")) }} />
                     </div>
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shrink-0 ${
-                      item.type === "document" ? "text-amber-400 bg-amber-500/10" : "text-navy-200 bg-navy-700"
+                      item.type === "document" ? "text-amber-400 bg-amber-500/10" : "text-white/80 bg-navy-700"
                     }`}>
                       {item.type === "document" ? t("search.pdf") : t("search.article")}
                     </span>
@@ -161,18 +161,18 @@ export default function SearchDropdown() {
               <Link
                 href={`/search?q=${encodeURIComponent(query)}`}
                 onClick={handleSuggestionClick}
-                className="block px-4 py-3 text-center text-sm font-semibold text-navy-200 hover:bg-white/5 transition-colors border-t border-white/10"
+                className="block px-4 py-3 text-center text-sm font-semibold text-white/80 hover:bg-white/5 transition-colors border-t border-white/10"
               >
                 {t("search.viewAll")} &rarr;
               </Link>
             </div>
           ) : query.trim() ? (
             <div className="px-4 py-6 text-center">
-              <p className="text-sm text-navy-300">{t("search.noResultsFor")} &ldquo;{query}&rdquo;</p>
+              <p className="text-sm text-white/70">{t("search.noResultsFor")} &ldquo;{query}&rdquo;</p>
             </div>
           ) : (
             <div className="px-4 py-6 text-center">
-              <p className="text-sm text-navy-300">{t("search.startTyping")}</p>
+              <p className="text-sm text-white/70">{t("search.startTyping")}</p>
             </div>
           )}
         </div>

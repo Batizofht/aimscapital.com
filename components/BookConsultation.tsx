@@ -130,15 +130,15 @@ export default function BookConsultation() {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-base font-bold text-white uppercase tracking-wider">{t("consultation.title")}</h3>
-                  <p className="text-xs text-navy-300 mt-1">{t("consultation.subtitle")}</p>
+                  <p className="text-xs text-white/70 mt-1">{t("consultation.subtitle")}</p>
                 </div>
-                <button onClick={handleClose} className="p-1.5 text-navy-300 hover:text-white transition-colors rounded-lg hover:bg-white/10"><X className="w-4 h-4" /></button>
+                <button onClick={handleClose} className="p-1.5 text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/10"><X className="w-4 h-4" /></button>
               </div>
               {!submitted && (
                 <div className="flex items-center gap-0 mb-6">
                   {["platform", "date", "details"].map((s, i) => (
                     <div key={s} className="flex items-center flex-1">
-                      <div className={`flex items-center justify-center w-7 h-7 rounded-full text-[10px] font-bold transition-all ${step === s ? "bg-navy-500 text-white" : ["platform", "date", "details"].indexOf(step) > i ? "bg-navy-700 text-navy-200" : "bg-navy-800 text-navy-400"}`}>
+                      <div className={`flex items-center justify-center w-7 h-7 rounded-full text-[10px] font-bold transition-all ${step === s ? "bg-navy-500 text-white" : ["platform", "date", "details"].indexOf(step) > i ? "bg-navy-700 text-white/80" : "bg-navy-800 text-white/60"}`}>
                         {["platform", "date", "details"].indexOf(step) > i ? <Check className="w-3 h-3" /> : i + 1}
                       </div>
                       {i < 2 && <div className={`flex-1 h-px mx-2 ${["platform", "date", "details"].indexOf(step) > i ? "bg-navy-500" : "bg-white/10"}`} />}
@@ -153,7 +153,7 @@ export default function BookConsultation() {
                 <>
                   {step === "platform" && (
                     <div>
-                      <p className="text-[11px] text-navy-300 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepMethod")}</p>
+                      <p className="text-[11px] text-white/70 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepMethod")}</p>
                       <div className="space-y-3">
                         {platforms.map((p) => {
                           const Icon = p.icon;
@@ -162,13 +162,13 @@ export default function BookConsultation() {
                             <button key={p.id} onClick={() => { setSelectedPlatform(p.id); setStep("date"); }}
                               className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all ${active ? "border-navy-400 bg-navy-800" : "border-white/10 bg-navy-850 hover:border-navy-500 hover:bg-navy-800"}`}>
                               <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all ${active ? "bg-navy-500" : "bg-navy-700"}`}>
-                                <Icon className={`w-5 h-5 ${active ? "text-white" : "text-navy-200"}`} />
+                                <Icon className={`w-5 h-5 ${active ? "text-white" : "text-white/80"}`} />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <span className={`text-sm font-bold block ${active ? "text-navy-100" : "text-white"}`}>{p.label}</span>
-                                <span className="text-xs text-navy-300">{p.desc}</span>
+                                <span className={`text-sm font-bold block ${active ? "text-white/90" : "text-white"}`}>{p.label}</span>
+                                <span className="text-xs text-white/70">{p.desc}</span>
                               </div>
-                              {active && <Check className="w-4 h-4 text-navy-200 shrink-0" />}
+                              {active && <Check className="w-4 h-4 text-white/80 shrink-0" />}
                             </button>
                           );
                         })}
@@ -178,18 +178,18 @@ export default function BookConsultation() {
 
                   {step === "date" && (
                     <div>
-                      <button onClick={() => setStep("platform")} className="text-[11px] text-navy-200 font-semibold uppercase tracking-wider mb-4 hover:underline flex items-center gap-1">
+                      <button onClick={() => setStep("platform")} className="text-[11px] text-white/80 font-semibold uppercase tracking-wider mb-4 hover:underline flex items-center gap-1">
                         <ChevronLeft className="w-3 h-3" /> {t("consultation.back")}
                       </button>
-                      <p className="text-[11px] text-navy-300 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepDate")}</p>
+                      <p className="text-[11px] text-white/70 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepDate")}</p>
                       <div className="border border-white/10 rounded-xl p-5">
                         <div className="flex items-center justify-between mb-5">
-                          <button onClick={prevMonth} className="w-8 h-8 flex items-center justify-center rounded-lg text-navy-300 hover:text-white hover:bg-white/10 transition-all"><ChevronLeft className="w-4 h-4" /></button>
+                          <button onClick={prevMonth} className="w-8 h-8 flex items-center justify-center rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all"><ChevronLeft className="w-4 h-4" /></button>
                           <span className="text-sm font-bold text-white">{MONTHS[calendarMonth]} {calendarYear}</span>
-                          <button onClick={nextMonth} className="w-8 h-8 flex items-center justify-center rounded-lg text-navy-300 hover:text-white hover:bg-white/10 transition-all"><ChevronRight className="w-4 h-4" /></button>
+                          <button onClick={nextMonth} className="w-8 h-8 flex items-center justify-center rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all"><ChevronRight className="w-4 h-4" /></button>
                         </div>
                         <div className="grid grid-cols-7 gap-1 text-center mb-2">
-                          {DAYS.map((d) => <span key={d} className="text-[10px] font-bold text-navy-300 uppercase tracking-wider py-1">{d}</span>)}
+                          {DAYS.map((d) => <span key={d} className="text-[10px] font-bold text-white/70 uppercase tracking-wider py-1">{d}</span>)}
                         </div>
                         <div className="grid grid-cols-7 gap-1 text-center">
                           {calendarDays.map((day, i) => {
@@ -198,7 +198,7 @@ export default function BookConsultation() {
                             const selected = selectedDate === formatDateValue(day);
                             return (
                               <button key={day} disabled={past} onClick={() => { setSelectedDate(formatDateValue(day)); setSelectedTime(""); }}
-                                className={`text-sm py-2.5 rounded-lg transition-all ${selected ? "bg-navy-500 text-white font-semibold shadow-sm" : past ? "text-navy-700 cursor-not-allowed" : "text-navy-100 hover:bg-white/10"}`}>
+                                className={`text-sm py-2.5 rounded-lg transition-all ${selected ? "bg-navy-500 text-white font-semibold shadow-sm" : past ? "text-white/30 cursor-not-allowed" : "text-white/90 hover:bg-white/10"}`}>
                                 {day}
                               </button>
                             );
@@ -208,11 +208,11 @@ export default function BookConsultation() {
 
                       {selectedDate && (
                         <div className="mt-4">
-                          <p className="text-[11px] text-navy-300 uppercase tracking-wider font-semibold mb-3">{t("consultation.stepTime")}</p>
+                          <p className="text-[11px] text-white/70 uppercase tracking-wider font-semibold mb-3">{t("consultation.stepTime")}</p>
                           <div className="flex flex-wrap gap-2">
                             {timeSlots.map((t) => (
                               <button key={t} onClick={() => setSelectedTime(t)}
-                                className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all ${selectedTime === t ? "bg-navy-500 text-white border-navy-500" : "bg-navy-850 text-navy-200 border-white/10 hover:border-navy-400 hover:bg-navy-800"}`}>
+                                className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all ${selectedTime === t ? "bg-navy-500 text-white border-navy-500" : "bg-navy-850 text-white/80 border-white/10 hover:border-navy-400 hover:bg-navy-800"}`}>
                                 {t}
                               </button>
                             ))}
@@ -220,7 +220,7 @@ export default function BookConsultation() {
                         </div>
                       )}
 
-                      <p className="text-[11px] text-navy-300 mt-4 flex items-center gap-1.5"><Clock className="w-3 h-3" /> {t("consultation.confirmNote")}</p>
+                      <p className="text-[11px] text-white/70 mt-4 flex items-center gap-1.5"><Clock className="w-3 h-3" /> {t("consultation.confirmNote")}</p>
                       <button onClick={() => selectedDate && selectedTime && setStep("details")} disabled={!selectedDate || !selectedTime}
                         className="w-full mt-4 py-3.5 text-sm font-semibold text-white bg-navy-500 rounded-xl hover:bg-navy-400 transition-all disabled:opacity-30 disabled:cursor-not-allowed">{t("consultation.continue")}</button>
                     </div>
@@ -228,34 +228,34 @@ export default function BookConsultation() {
 
                   {step === "details" && (
                     <div>
-                      <button onClick={() => setStep("date")} className="text-[11px] text-navy-200 font-semibold uppercase tracking-wider mb-4 hover:underline flex items-center gap-1">
+                      <button onClick={() => setStep("date")} className="text-[11px] text-white/80 font-semibold uppercase tracking-wider mb-4 hover:underline flex items-center gap-1">
                         <ChevronLeft className="w-3 h-3" /> {t("consultation.back")}
                       </button>
-                      <p className="text-[11px] text-navy-300 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepInfo")}</p>
+                      <p className="text-[11px] text-white/70 uppercase tracking-wider font-semibold mb-4">{t("consultation.stepInfo")}</p>
                       <div className="space-y-4 mb-6">
                         <div>
-                          <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("consultation.fullName")}</label>
+                          <label className="block text-xs font-medium text-white/80 mb-1.5">{t("consultation.fullName")}</label>
                           <input type="text" value={name} onChange={(e) => setName(e.target.value)}
                             className="w-full px-4 py-3 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent text-sm text-white bg-navy-850 focus:bg-navy-800 transition-colors placeholder-navy-400" placeholder={t("consultation.namePlaceholder")} />
                         </div>
                         <div>
-                          <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("consultation.email")}</label>
+                          <label className="block text-xs font-medium text-white/80 mb-1.5">{t("consultation.email")}</label>
                           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-4 py-3 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent text-sm text-white bg-navy-850 focus:bg-navy-800 transition-colors placeholder-navy-400" placeholder="your@email.com" />
                         </div>
                         <div>
-                          <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("consultation.phone")}</label>
+                          <label className="block text-xs font-medium text-white/80 mb-1.5">{t("consultation.phone")}</label>
                           <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
                             className="w-full px-4 py-3 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent text-sm text-white bg-navy-850 focus:bg-navy-800 transition-colors placeholder-navy-400" placeholder={t("consultation.phonePlaceholder")} />
                         </div>
                       </div>
 
                       <div className="bg-navy-800 border border-white/10 rounded-xl p-4 mb-6">
-                        <p className="text-[11px] text-navy-200 font-bold uppercase tracking-wider mb-3">{t("consultation.summary")}</p>
+                        <p className="text-[11px] text-white/80 font-bold uppercase tracking-wider mb-3">{t("consultation.summary")}</p>
                         <div className="space-y-2 text-sm">
-                          <div className="flex justify-between"><span className="text-navy-300">{t("consultation.platform")}</span><span className="font-medium text-white">{selectedPlatformData?.label}</span></div>
-                          {selectedDate && <div className="flex justify-between"><span className="text-navy-300">{t("consultation.date")}</span><span className="font-medium text-white">{selectedDate}</span></div>}
-                          {selectedTime && <div className="flex justify-between"><span className="text-navy-300">{t("consultation.time")}</span><span className="font-medium text-white">{selectedTime}</span></div>}
+                          <div className="flex justify-between"><span className="text-white/70">{t("consultation.platform")}</span><span className="font-medium text-white">{selectedPlatformData?.label}</span></div>
+                          {selectedDate && <div className="flex justify-between"><span className="text-white/70">{t("consultation.date")}</span><span className="font-medium text-white">{selectedDate}</span></div>}
+                          {selectedTime && <div className="flex justify-between"><span className="text-white/70">{t("consultation.time")}</span><span className="font-medium text-white">{selectedTime}</span></div>}
                         </div>
                       </div>
 
@@ -271,15 +271,15 @@ export default function BookConsultation() {
 
               {submitted && (
                 <div className="text-center py-6">
-                  <div className="w-16 h-16 rounded-full bg-navy-800 flex items-center justify-center mx-auto mb-5"><Check className="w-7 h-7 text-navy-200" /></div>
+                  <div className="w-16 h-16 rounded-full bg-navy-800 flex items-center justify-center mx-auto mb-5"><Check className="w-7 h-7 text-white/80" /></div>
                   <h4 className="text-lg font-bold text-white mb-2">{t("consultation.submittedTitle")}</h4>
-                  <p className="text-sm text-navy-300 mb-6 max-w-xs mx-auto leading-relaxed">{t("consultation.submittedBody", { name })}</p>
+                  <p className="text-sm text-white/70 mb-6 max-w-xs mx-auto leading-relaxed">{t("consultation.submittedBody", { name })}</p>
                   <div className="bg-navy-800 border border-white/10 rounded-xl p-4 text-left mb-6">
                     <div className="space-y-2 text-sm">
-                      <div className="flex justify-between"><span className="text-navy-300">{t("consultation.platform")}</span><span className="font-medium text-white">{selectedPlatformData?.label}</span></div>
-                      <div className="flex justify-between"><span className="text-navy-300">{t("consultation.date")}</span><span className="font-medium text-white">{selectedDate}</span></div>
-                      <div className="flex justify-between"><span className="text-navy-300">{t("consultation.time")}</span><span className="font-medium text-white">{selectedTime}</span></div>
-                      <div className="flex justify-between"><span className="text-navy-300">{t("consultation.email")}</span><span className="font-medium text-white">{email}</span></div>
+                      <div className="flex justify-between"><span className="text-white/70">{t("consultation.platform")}</span><span className="font-medium text-white">{selectedPlatformData?.label}</span></div>
+                      <div className="flex justify-between"><span className="text-white/70">{t("consultation.date")}</span><span className="font-medium text-white">{selectedDate}</span></div>
+                      <div className="flex justify-between"><span className="text-white/70">{t("consultation.time")}</span><span className="font-medium text-white">{selectedTime}</span></div>
+                      <div className="flex justify-between"><span className="text-white/70">{t("consultation.email")}</span><span className="font-medium text-white">{email}</span></div>
                     </div>
                   </div>
                   <button onClick={handleClose} className="px-10 py-3 text-sm font-semibold text-white bg-navy-500 rounded-xl hover:bg-navy-400 transition-all">{t("consultation.done")}</button>

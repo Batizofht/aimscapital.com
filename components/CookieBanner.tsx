@@ -27,7 +27,7 @@ export default function CookieBanner() {
       <div className="max-w-4xl mx-auto bg-navy-850 border border-white/15 rounded-xl shadow-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex items-start gap-3 flex-1 min-w-0">
           <div className="shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
-            <svg className="w-4 h-4 text-navy-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-4 h-4 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z" />
             </svg>
           </div>

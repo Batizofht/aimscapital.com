@@ -63,22 +63,19 @@ export default function AboutClient() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 md:px-6 w-full pt-20">
           <div className="text-center">
-            <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-5" />
-            <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.hero.eyebrow")}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider">{t("about.hero.title")}</h1>
           </div>
         </div>
       </section>
 
       {/* OUR STORY */}
-      <section className="bg-navy-900 py-16 lg:py-24 border-t border-white/5">
+      <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-10 lg:mb-14">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.story.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("about.story.title")}</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            <div className="space-y-4 text-navy-100 leading-relaxed text-sm sm:text-base">
+            <div className="space-y-4 text-white/90 leading-relaxed text-sm sm:text-base text-justify">
               {storyParas.map((p) => <p key={p}>{t(`about.story.${p}`)}</p>)}
             </div>
             <div className="lg:sticky lg:top-28 lg:self-start space-y-6">
@@ -87,7 +84,7 @@ export default function AboutClient() {
                 <div className="space-y-4">
                   {facts.map(([label, value]) => (
                     <div key={label} className="flex justify-between items-center py-3 border-b border-white/10 last:border-0">
-                      <span className="text-navy-200 font-medium text-sm">{label}</span>
+                      <span className="text-white/80 font-medium text-sm">{label}</span>
                       <span className="text-white font-bold text-sm text-right">{value}</span>
                     </div>
                   ))}
@@ -110,7 +107,6 @@ export default function AboutClient() {
       <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-10 lg:mb-14">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.impact.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("about.impact.title")}</h2>
           </div>
 
@@ -134,9 +130,9 @@ export default function AboutClient() {
                                 <span className="text-white text-sm font-bold">{String(i + 1).padStart(2, "0")}</span>
                               </div>
                               <div className="min-w-0">
-                                <span className="text-navy-200 font-bold text-xs tracking-wider uppercase">{m.year}</span>
+                                <span className="text-white/80 font-bold text-xs tracking-wider uppercase">{m.year}</span>
                                 <h3 className="text-white font-bold text-sm lg:text-base mt-0.5">{m.title}</h3>
-                                <p className="text-navy-100 text-xs sm:text-sm leading-relaxed mt-1">{m.desc}</p>
+                                <p className="text-white/90 text-xs sm:text-sm leading-relaxed mt-1">{m.desc}</p>
                               </div>
                             </div>
                           </div>
@@ -146,7 +142,7 @@ export default function AboutClient() {
                     </div>
                     {i < milestones.length - 1 && (
                       <div className="flex justify-center relative z-10" style={{ marginTop: "-1px" }}>
-                        <svg className="w-5 h-5 text-navy-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                         </svg>
                       </div>
@@ -171,16 +167,16 @@ export default function AboutClient() {
                           <span className="text-white text-xs font-bold">{i + 1}</span>
                         </div>
                         <div className="min-w-0">
-                          <span className="text-navy-200 font-bold text-xs tracking-wider uppercase">{m.year}</span>
+                          <span className="text-white/80 font-bold text-xs tracking-wider uppercase">{m.year}</span>
                           <h3 className="text-white font-bold text-sm mt-0.5">{m.title}</h3>
-                          <p className="text-navy-100 text-xs leading-relaxed mt-1">{m.desc}</p>
+                          <p className="text-white/90 text-xs leading-relaxed mt-1">{m.desc}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                   {i < milestones.length - 1 && (
                     <div className="flex justify-center pl-12 relative z-10">
-                      <svg className="w-4 h-4 text-navy-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </div>
@@ -193,33 +189,32 @@ export default function AboutClient() {
       </section>
 
       {/* VISION, MISSION, VALUES */}
-      <section className="bg-navy-900 py-16 lg:py-24 border-t border-white/5">
+      <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-14 lg:mb-16">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.vmv.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("about.vmv.title")}</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-navy-800 border border-white/10 p-6 lg:p-8 rounded-xl text-white">
               <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <Target className="w-5 h-5 text-navy-200" />
+                <Target className="w-5 h-5 text-white/80" />
               </div>
-              <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-navy-200">{t("about.vmv.vision")}</h3>
+              <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white/80">{t("about.vmv.vision")}</h3>
               <p className="text-white/85 leading-relaxed text-sm sm:text-base">{t("about.vmv.visionText")}</p>
             </div>
             <div className="bg-navy-800 border border-white/10 p-6 lg:p-8 rounded-xl text-white">
               <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-5">
-                <Globe className="w-5 h-5 text-navy-200" />
+                <Globe className="w-5 h-5 text-white/80" />
               </div>
-              <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-navy-200">{t("about.vmv.mission")}</h3>
+              <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white/80">{t("about.vmv.mission")}</h3>
               <p className="text-white/85 leading-relaxed text-sm sm:text-base">{t("about.vmv.missionText")}</p>
             </div>
           </div>
           <div>
-            <h3 className="text-center text-sm text-navy-300 font-bold uppercase tracking-[0.2em] mb-6">{t("about.vmv.values")}</h3>
+            <h3 className="text-center text-sm text-white/70 font-bold uppercase tracking-[0.2em] mb-6">{t("about.vmv.values")}</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {t("about.vmv.valuesList").split("|").map((v) => (
-                <span key={v} className="px-4 md:px-6 py-3 border border-white/15 rounded-lg text-navy-100 text-sm font-medium bg-navy-800 hover:border-navy-400 hover:bg-navy-700 transition-colors cursor-default">{v}</span>
+                <span key={v} className="px-4 md:px-6 py-3 border border-white/15 rounded-lg text-white/90 text-sm font-medium bg-navy-800 hover:border-navy-400 hover:bg-navy-700 transition-colors cursor-default">{v}</span>
               ))}
             </div>
           </div>
@@ -227,10 +222,9 @@ export default function AboutClient() {
       </section>
 
       {/* KEY ENGAGEMENTS */}
-      <section className="bg-navy-900 py-16 lg:py-24 border-t border-white/5">
+      <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-14 lg:mb-16">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.key.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("about.key.title")}</h2>
           </div>
           <div className="relative">
@@ -240,7 +234,7 @@ export default function AboutClient() {
               return (
                 <div key={i} className="relative lg:pl-20 pb-12 last:pb-0">
                   <div className="hidden lg:flex absolute left-2.5 top-1 w-7 h-7 rounded-full bg-navy-900 border-2 border-white/15 items-center justify-center">
-                    <span className="text-[10px] font-bold text-navy-200">0{i + 1}</span>
+                    <span className="text-[10px] font-bold text-white/80">0{i + 1}</span>
                   </div>
                   <div className="bg-navy-800 rounded-xl border border-white/10 p-6 lg:p-8">
                     <div className="flex items-start gap-4">
@@ -249,7 +243,7 @@ export default function AboutClient() {
                       </div>
                       <div>
                         <h3 className="text-white font-bold text-base mb-2">{item.title}</h3>
-                        <p className="text-navy-100 text-sm leading-relaxed">{item.desc}</p>
+                        <p className="text-white/90 text-sm leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -258,7 +252,7 @@ export default function AboutClient() {
             })}
           </div>
           <div className="mt-10">
-            <Link href="/projects" className="text-navy-200 font-semibold hover:text-white transition-colors text-sm">{t("about.key.viewAll")} &rarr;</Link>
+            <Link href="/#engagements" className="text-white/80 font-semibold hover:text-white transition-colors text-sm">{t("about.key.viewAll")} &rarr;</Link>
           </div>
         </div>
       </section>
@@ -267,14 +261,13 @@ export default function AboutClient() {
       <section className="bg-navy-850 py-16 lg:py-24 overflow-hidden border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-10 lg:mb-14">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("about.partners.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("about.partners.title")}</h2>
           </div>
           <div className="divide-y divide-white/10 border-t border-white/10 max-w-3xl">
             {partners.map((p, i) => (
               <div key={i} className="flex items-center justify-between gap-4 py-5">
                 <span className="text-white font-semibold text-sm sm:text-base">{p.name}</span>
-                <span className="text-[11px] text-navy-200 font-semibold uppercase tracking-wider shrink-0">{p.flag}</span>
+                <span className="text-[11px] text-white/80 font-semibold uppercase tracking-wider shrink-0">{p.flag}</span>
               </div>
             ))}
           </div>

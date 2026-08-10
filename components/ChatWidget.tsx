@@ -234,13 +234,13 @@ export default function ChatWidget() {
           <div className="flex border-b border-white/10 shrink-0">
             <button
               onClick={() => setTab("support")}
-              className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === "support" ? "text-white border-b-2 border-navy-300" : "text-navy-300 hover:text-white"}`}
+              className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === "support" ? "text-white border-b-2 border-navy-300" : "text-white/70 hover:text-white"}`}
             >
               {t("chat.tabSupport")}
             </button>
             <button
               onClick={() => setTab("meet")}
-              className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === "meet" ? "text-white border-b-2 border-navy-300" : "text-navy-300 hover:text-white"}`}
+              className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === "meet" ? "text-white border-b-2 border-navy-300" : "text-white/70 hover:text-white"}`}
             >
               {t("chat.tabMeet")}
             </button>
@@ -288,7 +288,7 @@ export default function ChatWidget() {
                       <button
                         key={s}
                         onClick={() => send(s)}
-                        className="text-[11px] font-medium text-navy-200 bg-navy-800 border border-white/15 rounded-full px-3 py-1.5 hover:bg-navy-700 transition-colors"
+                        className="text-[11px] font-medium text-white/80 bg-navy-800 border border-white/15 rounded-full px-3 py-1.5 hover:bg-navy-700 transition-colors"
                       >
                         {s}
                       </button>
@@ -324,7 +324,7 @@ export default function ChatWidget() {
                     </svg>
                   </button>
                 </div>
-                <p className="text-[10px] text-navy-400 text-center mt-2">{t("chat.disclaimer")}</p>
+                <p className="text-[10px] text-white/60 text-center mt-2">{t("chat.disclaimer")}</p>
               </form>
             </>
           )}
@@ -332,7 +332,7 @@ export default function ChatWidget() {
           {/* Meet Us Tab */}
           {tab === "meet" && (
             <div className="flex-1 overflow-y-auto p-5 bg-navy-950">
-              <p className="text-xs text-navy-300 mb-4">{t("chat.meetIntro")}</p>
+              <p className="text-xs text-white/70 mb-4">{t("chat.meetIntro")}</p>
               <div className="space-y-3">
                 {!user && (
                   <Link
@@ -341,15 +341,15 @@ export default function ChatWidget() {
                     className="flex items-center gap-4 w-full p-4 rounded-xl border-2 border-white/10 bg-navy-800 hover:border-navy-400 hover:bg-navy-700 transition-all group"
                   >
                     <div className="w-11 h-11 rounded-xl bg-navy-700 flex items-center justify-center shrink-0 group-hover:bg-navy-600 transition-colors">
-                      <svg className="w-5 h-5 text-navy-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                       </svg>
                     </div>
                     <div className="flex-1 text-left">
-                      <span className="text-sm font-bold text-white block group-hover:text-navy-200 transition-colors">{t("chat.registerTitle")}</span>
-                      <span className="text-xs text-navy-300">{t("chat.registerDesc")}</span>
+                      <span className="text-sm font-bold text-white block group-hover:text-white/80 transition-colors">{t("chat.registerTitle")}</span>
+                      <span className="text-xs text-white/70">{t("chat.registerDesc")}</span>
                     </div>
-                    <svg className="w-4 h-4 text-navy-400 group-hover:text-navy-200 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    <svg className="w-4 h-4 text-white/60 group-hover:text-white/80 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </Link>
                 )}
 
@@ -359,15 +359,15 @@ export default function ChatWidget() {
                   className="flex items-center gap-4 w-full p-4 rounded-xl border-2 border-white/10 bg-navy-800 hover:border-navy-400 hover:bg-navy-700 transition-all group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-navy-700 flex items-center justify-center shrink-0 group-hover:bg-navy-600 transition-colors">
-                    <svg className="w-5 h-5 text-navy-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div className="flex-1 text-left">
-                    <span className="text-sm font-bold text-white block group-hover:text-navy-200 transition-colors">{t("chat.contactTitle")}</span>
-                    <span className="text-xs text-navy-300">{t("chat.contactDesc")}</span>
+                    <span className="text-sm font-bold text-white block group-hover:text-white/80 transition-colors">{t("chat.contactTitle")}</span>
+                    <span className="text-xs text-white/70">{t("chat.contactDesc")}</span>
                   </div>
-                  <svg className="w-4 h-4 text-navy-400 group-hover:text-navy-200 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  <svg className="w-4 h-4 text-white/60 group-hover:text-white/80 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
 
                 <a
@@ -384,17 +384,17 @@ export default function ChatWidget() {
                   </div>
                   <div className="flex-1 text-left">
                     <span className="text-sm font-bold text-white block group-hover:text-green-400 transition-colors">{t("chat.whatsappTitle")}</span>
-                    <span className="text-xs text-navy-300">{t("chat.whatsappDesc")}</span>
+                    <span className="text-xs text-white/70">{t("chat.whatsappDesc")}</span>
                   </div>
-                  <svg className="w-4 h-4 text-navy-400 group-hover:text-green-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  <svg className="w-4 h-4 text-white/60 group-hover:text-green-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </a>
               </div>
 
               <div className="mt-5 pt-4 border-t border-white/10">
-                <p className="text-[11px] text-navy-300 leading-relaxed">
-                  <span className="font-semibold text-navy-200">{t("chat.officeLabel")}</span> KG 5 Ave, Kacyiru, Gasabo District, Kigali, Rwanda
+                <p className="text-[11px] text-white/70 leading-relaxed">
+                  <span className="font-semibold text-white/80">{t("chat.officeLabel")}</span> KG 5 Ave, Kacyiru, Gasabo District, Kigali, Rwanda
                   <br />
-                  <span className="font-semibold text-navy-200">{t("chat.phoneLabel")}</span> +250 788 309 268
+                  <span className="font-semibold text-white/80">{t("chat.phoneLabel")}</span> +250 788 309 268
                 </p>
               </div>
             </div>

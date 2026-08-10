@@ -37,7 +37,7 @@ function toAbsoluteUrl(image: string | undefined | null): string | null {
 function PostSkeleton() {
   return (
     <div className="pt-20 animate-pulse">
-      <article className="bg-navy-900 py-16 lg:py-24">
+      <article className="bg-navy-850 py-16 lg:py-24">
         <div className="max-w-[760px] mx-auto px-4 md:px-6">
           <div className="h-4 bg-navy-700 rounded w-32 mb-8" />
           <div className="h-6 bg-navy-700 rounded w-24 mb-4" />
@@ -115,23 +115,23 @@ export default function BlogDetailClient({ slug }: Props) {
 
   return (
     <div className="pt-20">
-      <article className="bg-navy-900 py-16 lg:py-24">
+      <article className="bg-navy-850 py-16 lg:py-24">
         <div className="max-w-[760px] mx-auto px-4 md:px-6">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] text-navy-400 mb-8">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] text-white/60 mb-8">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-navy-200 font-semibold uppercase tracking-wider hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 text-white/80 font-semibold uppercase tracking-wider hover:text-white transition-colors"
             >
               <ArrowLeft className="w-3 h-3" aria-hidden="true" />
               Back to Blog
             </Link>
             <ChevronRight className="w-3 h-3" aria-hidden="true" />
-            <span aria-current="page" className="truncate max-w-[200px] text-navy-400">
+            <span aria-current="page" className="truncate max-w-[200px] text-white/60">
               {post.title}
             </span>
           </nav>
 
-          <p className="text-[10px] font-bold text-navy-300 uppercase tracking-[0.18em] mb-4">
+          <p className="text-[10px] font-bold text-white/70 uppercase tracking-[0.18em] mb-4">
             <span className="bg-navy-800 px-2.5 py-1 rounded-full">
               {post.category}
             </span>
@@ -141,17 +141,17 @@ export default function BlogDetailClient({ slug }: Props) {
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[11px] text-navy-400 mb-10 pb-8 border-b border-white/10">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[11px] text-white/60 mb-10 pb-8 border-b border-white/10">
             <time dateTime={post.date} className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-navy-300" aria-hidden="true" />
+              <Calendar className="w-3.5 h-3.5 text-white/70" aria-hidden="true" />
               {post.date}
             </time>
             <span className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-navy-300" aria-hidden="true" />
+              <Clock className="w-3.5 h-3.5 text-white/70" aria-hidden="true" />
               {post.readTime}
             </span>
             {post.author && (
-              <span className="text-navy-300 font-medium">
+              <span className="text-white/70 font-medium">
                 By{" "}
                 <a
                   href={`/blog?author=${encodeURIComponent(post.author)}`}
@@ -176,7 +176,7 @@ export default function BlogDetailClient({ slug }: Props) {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center" aria-hidden="true">
-                <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">
                   Article Image
                 </span>
               </div>
@@ -184,7 +184,7 @@ export default function BlogDetailClient({ slug }: Props) {
           </div>
 
           <div
-            className="text-base text-navy-100 italic leading-relaxed mb-10 pl-5 border-l-[3px] border-navy-400"
+            className="text-base text-white/90 italic leading-relaxed mb-10 pl-5 border-l-[3px] border-navy-400"
             dangerouslySetInnerHTML={{ __html: post.excerpt }}
           />
 
@@ -192,11 +192,11 @@ export default function BlogDetailClient({ slug }: Props) {
             className="
               prose prose-sm sm:prose-base prose-invert max-w-none
               prose-headings:font-bold prose-headings:text-white prose-headings:tracking-tight
-              prose-p:text-navy-100 prose-p:leading-[1.8]
-              prose-a:text-navy-200 prose-a:no-underline hover:prose-a:underline
+              prose-p:text-white/90 prose-p:leading-[1.8]
+              prose-a:text-white/80 prose-a:no-underline hover:prose-a:underline
               prose-strong:text-white
-              prose-blockquote:border-l-navy-400 prose-blockquote:text-navy-300 prose-blockquote:not-italic
-              prose-ul:text-navy-100 prose-ol:text-navy-100
+              prose-blockquote:border-l-navy-400 prose-blockquote:text-white/70 prose-blockquote:not-italic
+              prose-ul:text-white/90 prose-ol:text-white/90
               prose-pre:bg-navy-800 prose-pre:border prose-pre:border-white/10
               prose-img:rounded-lg
             "
@@ -209,7 +209,7 @@ export default function BlogDetailClient({ slug }: Props) {
                 <Link
                   key={tag}
                   href={`/blog?tag=${encodeURIComponent(tag)}`}
-                  className="text-[11px] font-medium text-navy-200 bg-navy-800 hover:bg-navy-700 px-3 py-1 rounded-full transition-colors"
+                  className="text-[11px] font-medium text-white/80 bg-navy-800 hover:bg-navy-700 px-3 py-1 rounded-full transition-colors"
                   rel="tag"
                 >
                   {tag}
@@ -226,9 +226,6 @@ export default function BlogDetailClient({ slug }: Props) {
           className="bg-navy-850 border-t border-white/10 py-16 lg:py-24"
         >
           <div className="max-w-[1200px] mx-auto px-4 md:px-6">
-            <p className="text-navy-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
-              More Articles
-            </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-10 lg:mb-12">
               Related Insights
             </h2>
@@ -250,23 +247,23 @@ export default function BlogDetailClient({ slug }: Props) {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center" aria-hidden="true">
-                        <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">
                           Article Image
                         </span>
                       </div>
                     )}
                   </div>
                   <div className="flex flex-col flex-1 p-5 lg:p-6">
-                    <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider mb-1.5">
+                    <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider mb-1.5">
                       {relatedPost.category}
                     </span>
-                    <h3 className="text-sm lg:text-[0.9375rem] font-bold text-white leading-snug mb-2 group-hover:text-navy-200 transition-colors">
+                    <h3 className="text-sm lg:text-[0.9375rem] font-bold text-white leading-snug mb-2 group-hover:text-white/80 transition-colors">
                       {relatedPost.title}
                     </h3>
-                    <p className="text-xs text-navy-300 leading-relaxed line-clamp-2 mb-4 flex-1">
+                    <p className="text-xs text-white/70 leading-relaxed line-clamp-2 mb-4 flex-1">
                       {stripHtml(relatedPost.excerpt)}
                     </p>
-                    <time dateTime={relatedPost.date} className="text-[10px] text-navy-400 mt-auto">
+                    <time dateTime={relatedPost.date} className="text-[10px] text-white/60 mt-auto">
                       {relatedPost.date}
                     </time>
                   </div>

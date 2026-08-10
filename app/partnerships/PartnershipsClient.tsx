@@ -34,8 +34,6 @@ export default function PartnershipsClient() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 md:px-6 w-full pt-20">
           <div className="text-center">
-            <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-5" />
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("partnerships.hero.eyebrow")}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider">{t("partnerships.hero.title")}</h1>
             <p className="text-white/80 text-base sm:text-lg mt-4 max-w-2xl mx-auto">{t("partnerships.hero.subhead")}</p>
           </div>
@@ -43,16 +41,15 @@ export default function PartnershipsClient() {
       </section>
 
       {/* PARTNERS */}
-      <section className="bg-navy-900 py-16 lg:py-24">
+      <section className="bg-navy-850 py-16 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="mb-10 lg:mb-14">
-            <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("partnerships.section.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("partnerships.section.title")}</h2>
           </div>
           <div className="divide-y divide-white/10 border-t border-white/10">
             {partners.map((p, i) => (
               <div key={p.name} className="group grid sm:grid-cols-[3.5rem_5rem_1fr] gap-x-8 gap-y-2 py-7 lg:py-8 transition-colors hover:bg-navy-800/40 -mx-4 px-4">
-                <div className="text-navy-400 text-lg font-bold tabular-nums pt-0.5 group-hover:text-navy-300 transition-colors">{String(i + 1).padStart(2, "0")}</div>
+                <div className="text-white/60 text-lg font-bold tabular-nums pt-0.5 group-hover:text-white/70 transition-colors">{String(i + 1).padStart(2, "0")}</div>
                 <div className="w-20 h-20 rounded-xl bg-white/80 border border-white/20 flex items-center justify-center overflow-hidden p-2 shrink-0">
                   {p.logo ? (
                     <img src={p.logo} alt={p.name} className="w-full h-full object-contain" />
@@ -65,10 +62,10 @@ export default function PartnershipsClient() {
                 <div className="min-w-0">
                   <div className="flex items-baseline justify-between gap-3 flex-wrap">
                     <h3 className="text-white font-bold text-lg">{p.name}</h3>
-                    <span className="text-xs text-navy-200 font-semibold uppercase tracking-wider">{p.type}</span>
+                    <span className="text-xs text-white/80 font-semibold uppercase tracking-wider">{p.type}</span>
                   </div>
-                  <p className="text-[11px] text-navy-400 uppercase tracking-wider mt-0.5">{p.location}</p>
-                  <p className="text-navy-100 text-sm leading-relaxed mt-3 max-w-3xl">{p.description}</p>
+                  <p className="text-[11px] text-white/60 uppercase tracking-wider mt-0.5">{p.location}</p>
+                  <p className="text-white/90 text-sm leading-relaxed mt-3 max-w-3xl">{p.description}</p>
                 </div>
               </div>
             ))}
@@ -83,7 +80,6 @@ export default function PartnershipsClient() {
           <div className="absolute inset-0 bg-navy-900/85" />
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 md:px-6 text-center">
-          <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wider mb-4">{t("partnerships.cta.title")}</h2>
           <p className="text-white/80 text-base sm:text-lg max-w-xl mx-auto mb-8">{t("partnerships.cta.subhead")}</p>
           <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-4 text-base font-semibold text-navy-900 bg-white rounded-lg hover:bg-navy-100 transition-all">

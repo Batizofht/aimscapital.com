@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="text-center max-w-md mx-auto px-4">
         <div className="text-8xl font-bold text-white mb-2">404</div>
         <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-6" />
-        <p className="text-navy-200 text-lg mb-8">
+        <p className="text-white/80 text-lg mb-8">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="flex gap-4 justify-center">

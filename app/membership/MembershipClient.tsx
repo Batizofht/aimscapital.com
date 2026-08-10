@@ -19,10 +19,10 @@ export default function MembershipPageClient() {
 
   if (loading) {
     return (
-      <div className="pt-20 min-h-screen bg-navy-900 flex items-center justify-center">
+      <div className="pt-20 min-h-screen bg-navy-850 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-navy-400 mx-auto"></div>
-          <p className="text-navy-300 mt-4 text-sm">{t("membership.loading")}</p>
+          <p className="text-white/70 mt-4 text-sm">{t("membership.loading")}</p>
         </div>
       </div>
     );
@@ -33,10 +33,10 @@ export default function MembershipPageClient() {
       window.location.replace("/account");
     }
     return (
-      <div className="pt-20 min-h-screen bg-navy-900 flex items-center justify-center">
+      <div className="pt-20 min-h-screen bg-navy-850 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-navy-400 mx-auto"></div>
-          <p className="text-navy-300 mt-4 text-sm">{t("membership.redirecting")}</p>
+          <p className="text-white/70 mt-4 text-sm">{t("membership.redirecting")}</p>
         </div>
       </div>
     );
@@ -89,7 +89,7 @@ export default function MembershipPageClient() {
   };
 
   return (
-    <div className="pt-20 min-h-screen bg-navy-900 flex items-center justify-center py-16 px-4">
+    <div className="pt-20 min-h-screen bg-navy-850 flex items-center justify-center py-16 px-4">
       <div className="w-full max-w-md">
         <div className="bg-navy-800 rounded-2xl border border-white/10 p-8">
           <div className="text-center mb-8">
@@ -99,7 +99,7 @@ export default function MembershipPageClient() {
             <h1 className="text-xl font-bold text-white uppercase tracking-wider">
               {tab === "login" ? t("membership.signInTitle") : t("membership.createTitle")}
             </h1>
-            <p className="text-sm text-navy-300 mt-1">
+            <p className="text-sm text-white/70 mt-1">
               {tab === "login" ? t("membership.signInSub") : t("membership.createSub")}
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function MembershipPageClient() {
                 key={tabKey}
                 onClick={() => setTab(tabKey)}
                 className={`flex-1 py-2.5 text-sm font-semibold rounded-lg transition-all ${
-                  tab === tabKey ? "bg-navy-600 text-white shadow-sm" : "text-navy-300 hover:text-white"
+                  tab === tabKey ? "bg-navy-600 text-white shadow-sm" : "text-white/70 hover:text-white"
                 }`}
               >
                 {tabKey === "login" ? t("membership.tabSignIn") : t("membership.tabRegister")}
@@ -128,9 +128,9 @@ export default function MembershipPageClient() {
           <form onSubmit={tab === "login" ? handleLogin : handleRegister} className="space-y-4">
             {tab === "register" && (
               <div>
-                <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("membership.fullName")}</label>
+                <label className="block text-xs font-medium text-white/80 mb-1.5">{t("membership.fullName")}</label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
                   <input
                     type="text"
                     value={name}
@@ -143,9 +143,9 @@ export default function MembershipPageClient() {
             )}
 
             <div>
-              <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("membership.emailLabel")}</label>
+              <label className="block text-xs font-medium text-white/80 mb-1.5">{t("membership.emailLabel")}</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
                 <input
                   type="email"
                   value={email}
@@ -157,9 +157,9 @@ export default function MembershipPageClient() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-navy-200 mb-1.5">{t("membership.passwordLabel")}</label>
+              <label className="block text-xs font-medium text-white/80 mb-1.5">{t("membership.passwordLabel")}</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
                 <input
                   type="password"
                   value={password}
@@ -172,7 +172,7 @@ export default function MembershipPageClient() {
 
             {tab === "register" && (
               <div>
-                <label className="block text-xs font-medium text-navy-200 mb-2">{t("membership.membershipType")}</label>
+                <label className="block text-xs font-medium text-white/80 mb-2">{t("membership.membershipType")}</label>
                 <div className="flex gap-3">
                   {([
                     { value: "beneficial" as const, label: t("membership.beneficial"), desc: t("membership.beneficialDesc") },
@@ -188,10 +188,10 @@ export default function MembershipPageClient() {
                           : "border-white/10 hover:border-navy-500"
                       }`}
                     >
-                      <span className={`text-sm font-bold block ${type === opt.value ? "text-navy-100" : "text-white"}`}>
+                      <span className={`text-sm font-bold block ${type === opt.value ? "text-white/90" : "text-white"}`}>
                         {opt.label}
                       </span>
-                      <span className="text-[11px] text-navy-300">{opt.desc}</span>
+                      <span className="text-[11px] text-white/70">{opt.desc}</span>
                     </button>
                   ))}
                 </div>
@@ -209,7 +209,7 @@ export default function MembershipPageClient() {
           </form>
 
           {tab === "login" && (
-            <p className="text-xs text-navy-400 text-center mt-6">
+            <p className="text-xs text-white/60 text-center mt-6">
               {t("membership.footerNote")}
             </p>
           )}

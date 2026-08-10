@@ -70,8 +70,6 @@ export default function BlogListClient() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 md:px-6 w-full pt-20">
           <div className="text-center">
-            <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-5" />
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("blog.eyebrow")}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider">{t("blog.title")}</h1>
             <p className="text-white/80 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
               {t("blog.subhead")}
@@ -92,7 +90,7 @@ export default function BlogListClient() {
                   className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
                     activeCategory === cat
                       ? "bg-navy-600 text-white shadow-sm"
-                      : "bg-navy-800 text-navy-300 hover:bg-navy-700 hover:text-white"
+                      : "bg-navy-800 text-white/70 hover:bg-navy-700 hover:text-white"
                   }`}
                 >
                   {cat === "All" ? t("blog.allCategories") || "All" : cat}
@@ -103,9 +101,9 @@ export default function BlogListClient() {
         </div>
       )}
 
-      <section className="bg-navy-900 pt-12 lg:pt-16 pb-8 lg:pb-12">
+      <section className="bg-navy-850 pt-12 lg:pt-16 pb-8 lg:pb-12">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
-          <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-4">{t("blog.featured")}</p>
+          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.2em] mb-4">{t("blog.featured")}</p>
           {loading ? (
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
               <div className="lg:col-span-3"><Skeleton className="aspect-[16/9] lg:aspect-[16/10] w-full" /></div>
@@ -131,31 +129,30 @@ export default function BlogListClient() {
                         className="object-cover"
                       />
                     ) : (
-                      <span className="text-xs font-bold text-navy-300 uppercase tracking-wider">{t("blog.featuredImage")}</span>
+                      <span className="text-xs font-bold text-white/70 uppercase tracking-wider">{t("blog.featuredImage")}</span>
                     )}
                   </div>
                 </div>
                 <div className="lg:col-span-2 flex flex-col justify-center">
-                  <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider mb-3">{featured.category}</span>
-                  <h2 className="text-xl lg:text-2xl font-bold text-white leading-tight mb-3 group-hover:text-navy-200 transition-colors">{featured.title}</h2>
-                  <p className="text-sm text-navy-100 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: featured.excerpt }} />
-                  <div className="flex items-center gap-4 text-xs text-navy-300 mb-4">
+                  <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider mb-3">{featured.category}</span>
+                  <h2 className="text-xl lg:text-2xl font-bold text-white leading-tight mb-3 group-hover:text-white/80 transition-colors">{featured.title}</h2>
+                  <p className="text-sm text-white/90 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: featured.excerpt }} />
+                  <div className="flex items-center gap-4 text-xs text-white/70 mb-4">
                     <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{featured.date}</span>
                     <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />{featured.readTime}</span>
                   </div>
-                  <span className="text-xs font-semibold text-navy-200 uppercase tracking-wider group-hover:underline">{t("blog.readArticle")} &rarr;</span>
+                  <span className="text-xs font-semibold text-white/80 uppercase tracking-wider group-hover:underline">{t("blog.readArticle")} &rarr;</span>
                 </div>
               </div>
             </Link>
           ) : (
-            <p className="text-sm text-navy-400">{t("blog.noFeatured")}</p>
+            <p className="text-sm text-white/60">{t("blog.noFeatured")}</p>
           )}
         </div>
       </section>
 
       <section className="bg-navy-850 py-16 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
-          <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-4">{t("blog.recent")}</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mb-10 lg:mb-12">{t("blog.moreInsights")}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {loading ? (
@@ -172,7 +169,7 @@ export default function BlogListClient() {
                 ))}
               </>
             ) : rest.length === 0 && !loading ? (
-              <div className="col-span-full text-center py-12"><p className="text-sm text-navy-400">{t("blog.noArticles")}</p></div>
+              <div className="col-span-full text-center py-12"><p className="text-sm text-white/60">{t("blog.noArticles")}</p></div>
             ) : (
               rest.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-navy-800 border border-white/10 rounded-sm hover:border-navy-400 transition-all duration-200">
@@ -186,14 +183,14 @@ export default function BlogListClient() {
                         className="object-cover"
                       />
                     ) : (
-                      <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider">{t("blog.articleImage")}</span>
+                      <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">{t("blog.articleImage")}</span>
                     )}
                   </div>
                   <div className="p-5 lg:p-6">
-                    <span className="text-[10px] font-bold text-navy-300 uppercase tracking-wider">{post.category}</span>
-                    <h3 className="text-sm lg:text-base font-bold text-white leading-snug mt-1.5 mb-2 group-hover:text-navy-200 transition-colors">{post.title}</h3>
-                    <p className="text-xs text-navy-100 leading-relaxed mb-3 line-clamp-2" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-                    <div className="flex items-center gap-3 text-[10px] text-navy-400">
+                    <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">{post.category}</span>
+                    <h3 className="text-sm lg:text-base font-bold text-white leading-snug mt-1.5 mb-2 group-hover:text-white/80 transition-colors">{post.title}</h3>
+                    <p className="text-xs text-white/90 leading-relaxed mb-3 line-clamp-2" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                    <div className="flex items-center gap-3 text-[10px] text-white/60">
                       <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{post.date}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
                     </div>

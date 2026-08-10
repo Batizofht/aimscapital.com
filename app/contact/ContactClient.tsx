@@ -88,8 +88,6 @@ export default function ContactPageClient() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 md:px-6 w-full pt-20">
           <div className="text-center">
-            <div className="w-12 h-0.5 bg-navy-400 mx-auto mb-5" />
-            <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("contact.hero.eyebrow")}</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wider">
               {t("contact.hero.title")}
             </h1>
@@ -100,15 +98,15 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      <section className="bg-navy-900 py-16 lg:py-24 border-t border-white/5">
+      <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Contact Info */}
             <div className="space-y-6 lg:space-y-8">
               <div>
                 <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{t("contact.addressLabel")}</h3>
-                <div className="flex items-start gap-3 text-navy-100">
-                  <MapPin className="w-5 h-5 text-navy-300 mt-0.5 shrink-0" />
+                <div className="flex items-start gap-3 text-white/90">
+                  <MapPin className="w-5 h-5 text-white/70 mt-0.5 shrink-0" />
                   <div>
                     <p>KG 5 Ave, Plot 2<br />Kacyiru (near KBC)<br />Gasabo District, Kigali, Rwanda</p>
                   </div>
@@ -117,23 +115,23 @@ export default function ContactPageClient() {
 
               <div>
                 <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{t("contact.phoneLabel")}</h3>
-                <a href="tel:+250788309268" className="flex items-center gap-3 text-navy-100 font-bold hover:text-white transition-colors">
-                  <Phone className="w-5 h-5 text-navy-300" />
+                <a href="tel:+250788309268" className="flex items-center gap-3 text-white/90 font-bold hover:text-white transition-colors">
+                  <Phone className="w-5 h-5 text-white/70" />
                   +250 788 309 268
                 </a>
               </div>
 
               <div>
                 <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{t("contact.emailLabel")}</h3>
-                <a href="mailto:attorneys@aimscapital.org" className="flex items-center gap-3 text-navy-200 font-bold hover:text-white transition-colors">
-                  <Mail className="w-5 h-5 text-navy-300" />
+                <a href="mailto:attorneys@aimscapital.org" className="flex items-center gap-3 text-white/80 font-bold hover:text-white transition-colors">
+                  <Mail className="w-5 h-5 text-white/70" />
                   attorneys@aimscapital.org
                 </a>
               </div>
 
               <div className="pt-4 lg:pt-6 border-t border-white/10">
                 <h3 className="text-base font-bold text-white uppercase tracking-wider mb-3">{t("contact.hoursLabel")}</h3>
-                <p className="text-navy-100">{t("contact.hoursValue")}</p>
+                <p className="text-white/90">{t("contact.hoursValue")}</p>
               </div>
             </div>
 
@@ -145,7 +143,7 @@ export default function ContactPageClient() {
                     <Check className="w-7 h-7 text-green-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{t("contact.sentTitle")}</h3>
-                  <p className="text-navy-300 text-sm max-w-xs mx-auto mb-6">{t("contact.sentBody")}</p>
+                  <p className="text-white/70 text-sm max-w-xs mx-auto mb-6">{t("contact.sentBody")}</p>
                   <button
                     onClick={() => { setSubmitted(false); setName(""); setEmail(""); setSubject(""); setMessage(""); setCustomSubject(""); setFormError(""); }}
                     className="px-6 py-3 bg-navy-600 text-white text-sm font-semibold rounded-xl hover:bg-navy-500 transition-all"
@@ -163,27 +161,27 @@ export default function ContactPageClient() {
                       </div>
                     )}
                     <div>
-                      <label className="block text-sm font-medium text-navy-200 mb-2">{t("contact.fullName")}</label>
+                      <label className="block text-sm font-medium text-white/80 mb-2">{t("contact.fullName")}</label>
                       <input type="text" value={name} onChange={(e) => setName(e.target.value)}
                         className="w-full px-4 py-3 border border-white/15 bg-navy-850 text-white placeholder-navy-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent" placeholder={t("contact.namePlaceholder")} />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy-200 mb-2">{t("contact.emailField")}</label>
+                      <label className="block text-sm font-medium text-white/80 mb-2">{t("contact.emailField")}</label>
                       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-3 border border-white/15 bg-navy-850 text-white placeholder-navy-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent" placeholder="your@email.com" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy-200 mb-2">{t("contact.subject")}</label>
+                      <label className="block text-sm font-medium text-white/80 mb-2">{t("contact.subject")}</label>
                       <div className="relative" ref={subjectRef}>
                         <button
                           type="button"
                           onClick={() => setSubjectOpen(!subjectOpen)}
                           className="w-full flex items-center justify-between px-4 py-3 border border-white/15 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent bg-navy-850 text-sm text-left"
                         >
-                          <span className={subject ? "text-white" : "text-navy-400"}>
+                          <span className={subject ? "text-white" : "text-white/60"}>
                             {subject ? t(`contact.subjects.${subject}`) : t("contact.selectSubject")}
                           </span>
-                          <ChevronDown className={`w-4 h-4 text-navy-300 transition-transform duration-200 ${subjectOpen ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-4 h-4 text-white/70 transition-transform duration-200 ${subjectOpen ? "rotate-180" : ""}`} />
                         </button>
                         {subjectOpen && (
                           <>
@@ -200,7 +198,7 @@ export default function ContactPageClient() {
                                   className={`w-full text-left px-4 py-3 text-sm transition-colors ${
                                     subject === s.value
                                       ? "bg-navy-600 text-white font-medium"
-                                      : "text-navy-100 hover:bg-white/5"
+                                      : "text-white/90 hover:bg-white/5"
                                   }`}
                                 >
                                   {s.label}
@@ -219,7 +217,7 @@ export default function ContactPageClient() {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy-200 mb-2">{t("contact.message")}</label>
+                      <label className="block text-sm font-medium text-white/80 mb-2">{t("contact.message")}</label>
                       <textarea rows={5} value={message} onChange={(e) => setMessage(e.target.value)}
                         className="w-full px-4 py-3 border border-white/15 bg-navy-850 text-white placeholder-navy-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent resize-none" placeholder={t("contact.messagePlaceholder")} />
                     </div>
@@ -237,10 +235,9 @@ export default function ContactPageClient() {
       </section>
 
       {/* ─── MAP ─── */}
-      <section className="bg-navy-900 py-16 lg:py-24 border-t border-white/5">
+      <section className="bg-navy-850 py-16 lg:py-24 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="text-center mb-10">
-            <p className="text-navy-300 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("contact.locationEyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">{t("contact.findUs")}</h2>
           </div>
           <div className="rounded-xl overflow-hidden border border-white/10">

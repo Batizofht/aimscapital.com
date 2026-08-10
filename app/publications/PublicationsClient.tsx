@@ -66,19 +66,7 @@ export default function PublicationsClient() {
   };
 
   return (
-    <div className="pt-20">
-      <section className="bg-navy-900 py-16 lg:py-20">
-        <div className="max-w-[800px] mx-auto px-4 md:px-6">
-          <div className="mb-3">
-            <p className="text-navy-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">{t("publications.eyebrow")}</p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-wider">{t("publications.title")}</h1>
-          </div>
-          <p className="text-navy-300 text-sm sm:text-base">
-            {t("publications.subhead")}
-          </p>
-        </div>
-      </section>
-
+    <div className="pt-18">
       {/* Category Tabs */}
       {!loading && categories.length > 1 && (
         <div className="bg-navy-850 border-b border-white/10 sticky top-[4.5rem] z-30">
@@ -91,7 +79,7 @@ export default function PublicationsClient() {
                   className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
                     activeCategory === cat
                       ? "bg-navy-600 text-white shadow-sm"
-                      : "bg-navy-800 text-navy-300 hover:bg-navy-700 hover:text-white"
+                      : "bg-navy-800 text-white/70 hover:bg-navy-700 hover:text-white"
                   }`}
                 >
                   {cat === "All" ? t("publications.allCategories") || "All" : cat}
@@ -102,7 +90,7 @@ export default function PublicationsClient() {
         </div>
       )}
 
-      <section className="bg-navy-900 py-16 lg:py-20 min-h-[50vh]">
+      <section className="bg-navy-850 py-16 lg:py-20 min-h-[50vh]">
         <div className="max-w-[700px] mx-auto px-4 md:px-6">
           {loading ? (
             <div className="space-y-8">
@@ -120,8 +108,8 @@ export default function PublicationsClient() {
             </div>
           ) : filteredDocs.length === 0 ? (
             <div className="text-center py-16">
-              <File className="w-12 h-12 text-navy-500 mx-auto mb-4" />
-              <p className="text-navy-400 text-sm">{t("publications.none")}</p>
+              <File className="w-12 h-12 text-white/50 mx-auto mb-4" />
+              <p className="text-white/60 text-sm">{t("publications.none")}</p>
             </div>
           ) : (
             <>
@@ -145,16 +133,16 @@ export default function PublicationsClient() {
                                 <File className="w-4 h-4 text-amber-600" />
                               </div>
                               <div className="min-w-0 flex-1">
-                                <h3 className="text-sm font-bold text-white group-hover:text-navy-200 transition-colors">{doc.title}</h3>
+                                <h3 className="text-sm font-bold text-white group-hover:text-white/80 transition-colors">{doc.title}</h3>
                                 {doc.excerpt && (
-                                  <p className="text-xs text-navy-300 mt-1 line-clamp-1" dangerouslySetInnerHTML={{ __html: doc.excerpt }} />
+                                  <p className="text-xs text-white/70 mt-1 line-clamp-1" dangerouslySetInnerHTML={{ __html: doc.excerpt }} />
                                 )}
-                                <div className="flex items-center gap-3 mt-2 text-[10px] text-navy-400">
+                                <div className="flex items-center gap-3 mt-2 text-[10px] text-white/60">
                                   <span>{doc.date}</span>
-                                  <span className="text-[10px] uppercase tracking-wider text-navy-400">|</span>
-                                  <span className="text-xs text-navy-400">{doc.category}</span>
+                                  <span className="text-[10px] uppercase tracking-wider text-white/60">|</span>
+                                  <span className="text-xs text-white/60">{doc.category}</span>
                                   {doc.fileUrl && (
-                                    <span className="flex items-center gap-1 text-navy-200 font-medium ml-auto">
+                                    <span className="flex items-center gap-1 text-white/80 font-medium ml-auto">
                                       <ExternalLink className="w-3 h-3" />{t("publications.openPdf")}
                                     </span>
                                   )}
@@ -174,7 +162,7 @@ export default function PublicationsClient() {
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page === 1}
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-navy-100 border border-white/15 rounded-lg hover:bg-navy-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 border border-white/15 rounded-lg hover:bg-navy-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     <ChevronLeft className="w-4 h-4" /> {t("publications.previous")}
                   </button>
@@ -185,7 +173,7 @@ export default function PublicationsClient() {
                       className={`w-9 h-9 text-sm font-bold rounded-lg transition-all ${
                         p === page
                           ? "bg-navy-600 text-white shadow-sm"
-                          : "text-navy-100 hover:bg-navy-800 border border-white/15"
+                          : "text-white/90 hover:bg-navy-800 border border-white/15"
                       }`}
                     >
                       {p}
@@ -194,7 +182,7 @@ export default function PublicationsClient() {
                   <button
                     onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                     disabled={page === totalPages}
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-navy-100 border border-white/15 rounded-lg hover:bg-navy-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 border border-white/15 rounded-lg hover:bg-navy-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     {t("publications.next")} <ChevronRight className="w-4 h-4" />
                   </button>
