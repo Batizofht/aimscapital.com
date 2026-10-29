@@ -12,7 +12,7 @@ const heroPractices = [
   { key: "landTitle", descKey: "landDesc" },
 ];
 
-const videos = ["/videos/sec.MOV", "/videos/thi.MOV","/videos/fir.mp4",];
+const videos = ["/vid/sec.MOV","/vid/thi.MOV",];
 
 export default function VideoHero() {
   const { t } = useTranslation();

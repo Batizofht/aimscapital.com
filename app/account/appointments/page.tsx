@@ -58,7 +58,7 @@ export default function AppointmentsPage() {
 
   const load = async () => {
     setLoading(true);
-    const res = await fetch("https://client2.wecollections.us/api/appointments");
+    const res = await fetch("https://api.aimscapital.org/api/appointments");
     if (!res.ok) { setLoading(false); return; }
     const data: Appointment[] = await res.json();
     if (user) setAppointments(data.filter((a) => a.clientEmail === user.email));
@@ -73,14 +73,14 @@ export default function AppointmentsPage() {
     if (!form.title || !form.date || !form.time || !user) return;
     setSubmitting(true);
     if (editing) {
-      const res = await fetch("https://client2.wecollections.us/api/appointments", {
+      const res = await fetch("https://api.aimscapital.org/api/appointments", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: editing, ...form, status: "pending" }),
       });
       if (!res.ok) { setSubmitting(false); return; }
     } else {
-      const res = await fetch("https://client2.wecollections.us/api/appointments", {
+      const res = await fetch("https://api.aimscapital.org/api/appointments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, clientName: user.name, clientEmail: user.email }),
@@ -103,7 +103,7 @@ export default function AppointmentsPage() {
 
   const handleCancel = async (id: number) => {
     setCancelling(id);
-    await fetch("https://client2.wecollections.us/api/appointments", {
+    await fetch("https://api.aimscapital.org/api/appointments", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, status: "cancelled" }),

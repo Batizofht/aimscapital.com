@@ -40,7 +40,7 @@ export default function PracticeAreasClient() {
     const subject = services.find((s) => s.key === selectedService)?.category || selectedService;
     setSubmitting(true);
     try {
-      const res = await fetch("https://client2.wecollections.us/api/contact", {
+      const res = await fetch("https://api.aimscapital.org/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, subject, body: message }),
@@ -83,7 +83,7 @@ export default function PracticeAreasClient() {
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Left Column — Practice Areas List (3/5 width) */}
             <div className="lg:col-span-3">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mb-8">{t("services.spectrum.title")}</h2>
+              {/* <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mb-8">{t("services.spectrum.title")}</h2> */}
               <div className="space-y-6">
                 {services.map((s, i) => (
                   <div key={s.key}>

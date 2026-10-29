@@ -32,7 +32,7 @@ export default function AboutClient() {
     [t("about.story.facts.incorporated"), "2013"],
     [t("about.story.facts.founder"), "Counsel Alloys Mutabingwa, FCIArb"],
     [t("about.story.facts.hq"), t("about.story.facts.hqValue")],
-    [t("about.story.facts.usEntity"), t("about.story.facts.usValue")],
+    [t("about.story.facts.offices"), t("about.story.facts.officesValue")],
     [t("about.story.facts.projects"), "40+"],
     [t("about.story.facts.regulator"), t("about.story.facts.regulatorValue")],
     [t("about.story.facts.licensed"), t("about.story.facts.licensedValue")],
@@ -209,6 +209,13 @@ export default function AboutClient() {
               <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white/80">{t("about.vmv.mission")}</h3>
               <p className="text-white/85 leading-relaxed text-sm sm:text-base">{t("about.vmv.missionText")}</p>
             </div>
+          </div>
+          <div className="bg-navy-800 border border-white/10 p-6 lg:p-8 rounded-xl text-white mb-12">
+            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+              <Scale className="w-5 h-5 text-white/80" />
+            </div>
+            <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white/80">{t("about.vmv.specialization")}</h3>
+            <p className="text-white/85 leading-relaxed text-sm sm:text-base">{t("about.vmv.specializationText")}</p>
           </div>
           <div>
             <h3 className="text-center text-sm text-white/70 font-bold uppercase tracking-[0.2em] mb-6">{t("about.vmv.values")}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Search, FileText, Calendar, Clock, File, ExternalLink, Loader } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 interface ResultItem {
   id: string;

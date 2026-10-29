@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://aimscapital.rw";
-  const apiBase = "https://client2.wecollections.us";
+  const apiBase = "https://api.aimscapital.org";
 
   // Static pages - ALL with trailing slashes to match trailingSlash: true config
   const staticPages = [

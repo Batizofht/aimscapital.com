@@ -117,6 +117,10 @@ export default function HomeClient() {
                     <p className="text-white leading-relaxed text-sm sm:text-base">{t("home.about.missionText")}</p>
                   </div>
                   <div>
+                    <div className="text-base sm:text-lg text-white font-bold uppercase tracking-wider mb-2">{t("home.about.specialization")}</div>
+                    <p className="text-white leading-relaxed text-sm sm:text-base">{t("home.about.specializationText")}</p>
+                  </div>
+                  <div>
                     <div className="text-base sm:text-lg text-white font-bold uppercase tracking-wider mb-2">{t("home.about.values")}</div>
                     <p className="text-white text-sm sm:text-base">{t("home.about.valuesText")}</p>
                   </div>

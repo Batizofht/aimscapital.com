@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from "react";
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 export interface User {
   id: string;

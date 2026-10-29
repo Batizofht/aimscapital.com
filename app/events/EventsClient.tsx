@@ -5,7 +5,7 @@ import { Film, Music, Calendar, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import MediaPlayer from "@/components/MediaPlayer";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 interface EventItem {
   id: string;

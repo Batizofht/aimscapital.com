@@ -3,7 +3,7 @@ import { Key, Loader, Check } from "lucide-react";
 import { toast } from "sonner";
 import { useAuth } from "../AuthContext";
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 export default function Settings() {
   const { admin } = useAuth();

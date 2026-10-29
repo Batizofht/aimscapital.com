@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 interface BlogPost {
   slug: string;

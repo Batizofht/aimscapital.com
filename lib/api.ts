@@ -1,4 +1,4 @@
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 export interface Conversation {
   id: number;

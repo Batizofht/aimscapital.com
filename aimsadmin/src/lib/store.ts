@@ -3,7 +3,7 @@ import type { BlogPost, BlogCategory, Appointment, Message, Member, ServiceReque
 // Re-export types for convenience
 export type { Member, BlogPost, BlogCategory, Appointment, Message, ServiceRequest, AdminUser, EventItem };
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 // Derived from API so it can never drift out of sync when API is pointed at a
 // different environment (e.g. localhost during development) — a hardcoded
 // second constant here previously caused uploaded file URLs to resolve

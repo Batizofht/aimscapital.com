@@ -3,7 +3,7 @@ import { Calendar, Video, Phone, Monitor, Building, Search, Mail, Send, Eye } fr
 import RichTextEditor from "../components/RichTextEditor";
 import { toast } from "sonner";
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 function Skeleton({ className }: { className?: string }) {
   return <div className={`animate-pulse bg-gray-100 rounded-lg ${className || ""}`} />;

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { File, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 const PER_PAGE = 10;
 
 interface Document {

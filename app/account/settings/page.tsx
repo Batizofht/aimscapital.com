@@ -5,7 +5,7 @@ import { useAuth } from "@/lib/AuthContext";
 import { User, Mail, Shield, AlertTriangle, Save, Phone, Lock, Loader } from "lucide-react";
 import { toast } from "sonner";
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 export default function SettingsPage() {
   const { user, refreshUser } = useAuth();

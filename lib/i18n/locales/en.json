@@ -59,16 +59,18 @@
     "about": {
       "eyebrow": "About the Firm",
       "title": "Trusted Legal & Investment Advisors Since 2011",
-      "p1": "Aims Capital Associates is a corporate law firm licensed by the Rwanda Capital Markets Authority to provide legal and investment advisory services. Founded by Counsel Alloys Mutabingwa, FCIArb (Fellow of the Chartered Institute of Arbitrators), the firm is incorporated in Rwanda and Delaware, USA.",
+      "p1": "Aims Capital Associates is a corporate law firm licensed by the Rwanda Capital Markets Authority to provide legal and investment advisory services. Founded by Counsel Alloys Mutabingwa, FCIArb (Fellow of the Chartered Institute of Arbitrators), the firm is incorporated in Rwanda (2013), Tanzania (2015) and Delaware, USA (2019).",
       "p2": "Commissioned by the United Nations Development Programme (UNDP), the firm reviewed over 50 Clean Development Mechanism (CDM) investment projects totalling $610 million, aligned to the United Nations Framework Convention on Climate Change (UNFCCC), Kyoto Protocol, and the Paris Agreement.",
       "p3": "The firm is the sole advisor on Climate Finance and investment in Rwanda and a Professional Service Provider under the Kigali International Financial Centre (KIFC) framework.",
       "readMore": "Read More About the Firm",
       "vision": "Vision",
-      "visionText": "Support the development of infrastructure, technology and access to funding across Rwanda.",
+      "visionText": "To contribute to the development of justice, corporate culture, and law for sustainable trade and development in Africa.",
       "mission": "Mission",
-      "missionText": "Provide legal, investment and fiduciary services to Rwanda, backed by trusted global partnerships.",
+      "missionText": "To provide high quality and reliable legal services for successful investment and trade transactions through global alliances and partnerships.",
+      "specialization": "Specialization",
+      "specializationText": "Transactions related to infrastructure development, green technology, finance, corporate services, regional integration advisory, Alternative Investment Markets [AIM] advisory, and dispute resolution services.",
       "values": "Core Values",
-      "valuesText": "Professionalism · Innovation · Integrity · Loyalty · Honesty · Quality"
+      "valuesText": "Professionalism · Innovation · Integrity · Loyalty · Honesty · Quality services"
     },
     "engagements": {
       "eyebrow": "Notable Engagements",
@@ -128,7 +130,7 @@
     "story": {
       "eyebrow": "About the Firm",
       "title": "Our Story",
-      "p1": "Aims Capital Associates, established in 2011, is a corporate law Firm licensed by the Rwanda Capital Markets Authority to provide both legal and investment advisory services. The Firm, founded in 2013 by Counsel Alloys Mutabingwa, FCIArb, who owns 100% shares, is incorporated both in Rwanda and Delaware in the United States of America.",
+      "p1": "Aims Capital Associates, established in 2011, is a corporate law Firm licensed by the Rwanda Capital Markets Authority to provide both legal and investment advisory services. The Firm, founded by Counsel Alloys Mutabingwa, FCIArb, is incorporated in Rwanda (2013), Tanzania (2015) and Delaware in the United States of America (2019).",
       "p2": "The Firm offers diverse services ranging from transaction advisory, legal services, contract management, disputes resolution, corporate services, tax advisory, Government relations, and project finance advisory.",
       "p3": "The firm has been commissioned to complete a review of over 50 Clean Development Mechanism (CDM) investment projects with an estimated total ticket size of US$610 million, aligned to the United Nations Framework Convention on Climate Change (UNFCCC), Kyoto Protocol and Article 6 Voluntary Carbon Market (VCM) and Nationally Determined Contribution (NDC) of the Paris Agreement. The review included verification of projects' conformity with UNFCCC CDM Standards, development of projects prospectus and pitch-book for COP28 due in November 2023. The Firm is currently working on an Investment prospectus for investment up-scaling in a US$100 Million Sustainable Housing Technology project.",
       "p4": "AIMS Capital was commissioned to jointly with GBRW and Garnet Partners successfully complete Rwanda's Five-Year Sustainable Finance Roadmap.",
@@ -145,14 +147,14 @@
         "incorporated": "Formally Incorporated",
         "founder": "Founder",
         "hq": "Headquarters",
-        "usEntity": "U.S. Entity",
+        "offices": "Offices",
         "projects": "Infrastructure Projects",
         "regulator": "Regulator",
         "licensed": "Licensed",
         "climate": "Climate Finance",
         "kifc": "KIFC (Kigali Intl. Financial Centre)",
         "hqValue": "Kigali, Rwanda",
-        "usValue": "Delaware, USA (2019)",
+        "officesValue": "Rwanda (2013), USA (2019), Tanzania (2015)",
         "regulatorValue": "Rwanda Capital Markets Authority",
         "licensedValue": "Legal & Investment Advisory",
         "climateValue": "Sole Advisor in Rwanda",
@@ -165,7 +167,7 @@
       "m2011t": "Firm Established",
       "m2011d": "Aims Capital Associates is established, laying the foundation for a multi-disciplinary corporate law practice in Rwanda.",
       "m2013t": "Licensed as AIMS Capital Associates",
-      "m2013d": "Licensed by the Rwanda Capital Markets Authority (CMA) to provide legal and investment advisory services under the name AIMS Capital Associates, incorporated in Rwanda and Delaware, USA.",
+      "m2013d": "Licensed by the Rwanda Capital Markets Authority (CMA) to provide legal and investment advisory services under the name AIMS Capital Associates, incorporated in Rwanda, followed by Tanzania (2015) and Delaware, USA (2019).",
       "m2014t": "EWSA Corporatization",
       "m2014d": "Commissioned by the Rwanda Government under World Bank funding to develop the legal structure for corporatization of the Energy, Water and Sanitation Authority (EWSA), leading to the formation of Rwanda Energy Group (REG) and Water and Sanitation Corporation (WASAC).",
       "m2017t": "AfDB Waste Management Study",
@@ -185,11 +187,13 @@
       "eyebrow": "Our Guiding Principles",
       "title": "Vision, Mission & Values",
       "vision": "Vision",
-      "visionText": "Support the development of infrastructure, technology and access to funding across Rwanda.",
+      "visionText": "To contribute to the development of justice, corporate culture, and law for sustainable trade and development in Africa.",
       "mission": "Mission",
-      "missionText": "To provide legal, investment and fiduciary services to Rwanda, backed by trusted global partnerships.",
+      "missionText": "To provide high quality and reliable legal services for successful investment and trade transactions through global alliances and partnerships.",
+      "specialization": "Specialization",
+      "specializationText": "Transactions related to infrastructure development, green technology, finance, corporate services, regional integration advisory, Alternative Investment Markets [AIM] advisory, and dispute resolution services.",
       "values": "Core Values",
-      "valuesList": "Professionalism|Innovation|Integrity|Loyalty|Honesty|Quality Services"
+      "valuesList": "Professionalism|Innovation|Integrity|Loyalty|Honesty|Quality services"
     },
     "key": {
       "eyebrow": "Track Record",
@@ -250,7 +254,7 @@
     "cta": { "eyebrow": "Get Started", "title": "Need Our Services?", "subhead": "Contact us to discuss your legal, investment and advisory needs.", "button": "Get in Touch" }
   },
   "practiceAreas": {
-    "hero": { "eyebrow": "What We Do", "title": "Practice Areas", "subhead": "12 specialised practice areas delivering comprehensive legal and investment advisory services" },
+    "hero": { "eyebrow": "What We Do", "title": "Practice Areas", "subhead": "7 specialised practice areas delivering comprehensive legal and investment advisory services" },
     "readMore": "Read More",
     "close": "Close",
     "items": {

@@ -40,7 +40,7 @@ export default function ServicesPage() {
   const load = async () => {
     if (!user) return;
     setLoading(true);
-    const res = await fetch(`https://client2.wecollections.us/api/service-requests?email=${encodeURIComponent(user.email)}`);
+    const res = await fetch(`https://api.aimscapital.org/api/service-requests?email=${encodeURIComponent(user.email)}`);
     if (!res.ok) { setLoading(false); return; }
     setRequests(await res.json());
     setLoading(false);
@@ -50,7 +50,7 @@ export default function ServicesPage() {
   const submit = async () => {
     if (!form.category || !form.service || !user) return;
     setSubmitting(true);
-    const res = await fetch("https://client2.wecollections.us/api/service-requests", {
+    const res = await fetch("https://api.aimscapital.org/api/service-requests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

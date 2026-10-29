@@ -5,7 +5,7 @@ import { useAuth } from "../AuthContext";
 import { getContactMessages } from "../lib/store";
 import { toast } from "sonner";
 
-const API = "https://client2.wecollections.us/api";
+const API = "https://api.aimscapital.org/api";
 
 function Skeleton({ className }: { className?: string }) {
   return <div className={`animate-pulse bg-gray-100 rounded-lg ${className || ""}`} />;

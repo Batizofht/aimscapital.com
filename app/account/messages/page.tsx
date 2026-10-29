@@ -41,7 +41,7 @@ export default function AccountMessagesPage() {
   const load = async (): Promise<Conversation[]> => {
     if (isInitialLoad.current) setLoading(true);
 
-    const res = await fetch(`https://client2.wecollections.us/api/messages?email=${encodeURIComponent(user?.email || "")}`);
+    const res = await fetch(`https://api.aimscapital.org/api/messages?email=${encodeURIComponent(user?.email || "")}`);
     if (!res.ok) {
       if (isInitialLoad.current) { setLoading(false); isInitialLoad.current = false; }
       return [];
@@ -78,7 +78,7 @@ export default function AccountMessagesPage() {
       hour: "numeric",
       minute: "2-digit",
     });
-    const res = await fetch("https://client2.wecollections.us/api/messages", {
+    const res = await fetch("https://api.aimscapital.org/api/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

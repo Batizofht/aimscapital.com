@@ -89,7 +89,7 @@ export default function BookConsultation() {
     setSubmitting(true);
     const p = platforms.find((x) => x.id === selectedPlatform);
     try {
-      const res = await fetch("https://client2.wecollections.us/api/consultations", {
+      const res = await fetch("https://api.aimscapital.org/api/consultations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -23,8 +23,8 @@ export default function AccountDashboard() {
     if (authLoading) return;
     if (!user) { router.push("/membership"); return; }
     Promise.all([
-      fetch("https://client2.wecollections.us/api/appointments").then(async (r) => { if (!r.ok) return []; return r.json(); }),
-      fetch("https://client2.wecollections.us/api/messages").then(async (r) => { if (!r.ok) return []; return r.json(); }),
+      fetch("https://api.aimscapital.org/api/appointments").then(async (r) => { if (!r.ok) return []; return r.json(); }),
+      fetch("https://api.aimscapital.org/api/messages").then(async (r) => { if (!r.ok) return []; return r.json(); }),
     ]).then(([appts, msgs]) => {
       const mine = appts.filter((a: any) => a.clientEmail === user.email);
       setAptCount(mine.filter((a: any) => a.status === "pending" || a.status === "confirmed").length);

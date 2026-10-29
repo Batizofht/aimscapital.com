@@ -1,4 +1,4 @@
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 export interface BlogPost {
   tags: any;

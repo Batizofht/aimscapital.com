@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Search, FileText, File, Loader } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 interface Suggestion {
   id: string;

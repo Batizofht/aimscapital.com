@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { SITE_URL, SITE_NAME } from "../../../lib/seo";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 
 interface BlogPost {
   tags: string[];

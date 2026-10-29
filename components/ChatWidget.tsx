@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/lib/AuthContext";
 
-const API_URL = "https://client2.wecollections.us";
+const API_URL = "https://api.aimscapital.org";
 const WHATSAPP = "https://wa.me/250788309268";
 
 type Tab = "support" | "meet";

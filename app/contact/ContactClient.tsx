@@ -51,7 +51,7 @@ export default function ContactPageClient() {
     const subjectLabelEn: Record<string, string> = { corporate: "Corporate Law", projects: "Projects", litigation: "Litigation", consulting: "Consulting", infrastructure: "Infrastructure", consultation: "Consultation", other: "Other" };
     setSubmitting(true);
     try {
-      const res = await fetch("https://client2.wecollections.us/api/contact", {
+      const res = await fetch("https://api.aimscapital.org/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
