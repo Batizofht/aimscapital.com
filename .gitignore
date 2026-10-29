@@ -58,3 +58,6 @@ next-env.d.ts
 **/*.mpeg
 **/*.mpg
 
+# hero videos used by components/VideoHero.tsx
+!public/vid/*.MOV
+
